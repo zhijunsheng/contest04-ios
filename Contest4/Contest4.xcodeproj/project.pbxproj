@@ -14,6 +14,7 @@
 		A157FB5A253649D90013568B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A157FB59253649D90013568B /* Assets.xcassets */; };
 		A157FB5D253649D90013568B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A157FB5B253649D90013568B /* LaunchScreen.storyboard */; };
 		A157FB68253649D90013568B /* Contest4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157FB67253649D90013568B /* Contest4Tests.swift */; };
+		A157FB7325364B1F0013568B /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157FB7225364B1F0013568B /* BoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		A157FB63253649D90013568B /* Contest4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Contest4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A157FB67253649D90013568B /* Contest4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contest4Tests.swift; sourceTree = "<group>"; };
 		A157FB69253649D90013568B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A157FB7225364B1F0013568B /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				A157FB50253649D30013568B /* AppDelegate.swift */,
 				A157FB52253649D30013568B /* SceneDelegate.swift */,
+				A157FB7225364B1F0013568B /* BoardView.swift */,
 				A157FB54253649D30013568B /* ViewController.swift */,
 				A157FB56253649D30013568B /* Main.storyboard */,
 				A157FB59253649D90013568B /* Assets.xcassets */,
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A157FB55253649D30013568B /* ViewController.swift in Sources */,
+				A157FB7325364B1F0013568B /* BoardView.swift in Sources */,
 				A157FB51253649D30013568B /* AppDelegate.swift in Sources */,
 				A157FB53253649D30013568B /* SceneDelegate.swift in Sources */,
 			);
