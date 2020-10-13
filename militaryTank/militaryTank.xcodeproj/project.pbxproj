@@ -15,6 +15,7 @@
 		B904BA6325366F9800383448 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B904BA6125366F9800383448 /* LaunchScreen.storyboard */; };
 		B904BA6E25366F9A00383448 /* militaryTankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B904BA6D25366F9A00383448 /* militaryTankTests.swift */; };
 		B904BA7925366F9A00383448 /* militaryTankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B904BA7825366F9A00383448 /* militaryTankUITests.swift */; };
+		B904BA8A2536715600383448 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B904BA892536715600383448 /* CanvasView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B904BA7425366F9A00383448 /* militaryTankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = militaryTankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B904BA7825366F9A00383448 /* militaryTankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = militaryTankUITests.swift; sourceTree = "<group>"; };
 		B904BA7A25366F9A00383448 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B904BA892536715600383448 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +102,13 @@
 			isa = PBXGroup;
 			children = (
 				B904BA5625366F8E00383448 /* AppDelegate.swift */,
+				B904BA892536715600383448 /* CanvasView.swift */,
+				B904BA6425366F9800383448 /* Info.plist */,
 				B904BA5825366F8E00383448 /* SceneDelegate.swift */,
 				B904BA5A25366F8E00383448 /* ViewController.swift */,
 				B904BA5C25366F8E00383448 /* Main.storyboard */,
 				B904BA5F25366F9800383448 /* Assets.xcassets */,
 				B904BA6125366F9800383448 /* LaunchScreen.storyboard */,
-				B904BA6425366F9800383448 /* Info.plist */,
 			);
 			path = militaryTank;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				B904BA5B25366F8E00383448 /* ViewController.swift in Sources */,
 				B904BA5725366F8E00383448 /* AppDelegate.swift in Sources */,
+				B904BA8A2536715600383448 /* CanvasView.swift in Sources */,
 				B904BA5925366F8E00383448 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
