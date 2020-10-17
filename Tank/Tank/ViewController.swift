@@ -9,12 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var tankView: TankView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func goLeft(_ sender: Any) {
+        tankView.tankX = tankView.tankX - 25
+        tankView.setNeedsDisplay()
+    }
+    
+    @IBAction func goRight(_ sender: Any) {
+        tankView.tankX = tankView.tankX + 25
+        tankView.setNeedsDisplay()
+    }
+    
 }
 
