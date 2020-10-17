@@ -19,6 +19,10 @@ class TankView: UIView {
         drawWheelCover()
         drawDecorations()
         drawTrack()
+        
+        if tankX < -500 {
+            tankX = 1000
+        }
     }
     
     func drawBody() {
