@@ -13,18 +13,21 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [self] (_) in
+            tankView.tankX -= 2
+            tankView.setNeedsDisplay()
+        }
     }
 
     @IBAction func goLeft(_ sender: Any) {
-        tankView.tankX = tankView.tankX - 25
+        tankView.tankX -= 25
         tankView.setNeedsDisplay()
     }
     
     @IBAction func goRight(_ sender: Any) {
-        tankView.tankX = tankView.tankX + 25
+        tankView.tankX += 25
         tankView.setNeedsDisplay()
     }
     
 }
-
