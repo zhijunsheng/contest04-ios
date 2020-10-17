@@ -10,9 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var canvasView: CanvasView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        var counter = 0
+        Timer.scheduledTimer(withTimeInterval: 0.11, repeats: true) { (_) in
+            print("abcd")
+            counter = counter + 5
+            print(counter)
+            self.canvasView.move = CGFloat(counter)
+            self.canvasView.setNeedsDisplay()
+        }
+        
     }
 
 

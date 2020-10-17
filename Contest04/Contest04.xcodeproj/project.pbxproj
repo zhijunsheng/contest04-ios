@@ -14,6 +14,7 @@
 		EC81B1E32534941900CB2627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC81B1E22534941900CB2627 /* Assets.xcassets */; };
 		EC81B1E62534941900CB2627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC81B1E42534941900CB2627 /* LaunchScreen.storyboard */; };
 		EC81B1F12534941900CB2627 /* Contest04Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC81B1F02534941900CB2627 /* Contest04Tests.swift */; };
+		EC81B1FC25349D8100CB2627 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC81B1FB25349D8100CB2627 /* CanvasView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		EC81B1EC2534941900CB2627 /* Contest04Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Contest04Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC81B1F02534941900CB2627 /* Contest04Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contest04Tests.swift; sourceTree = "<group>"; };
 		EC81B1F22534941900CB2627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC81B1FB25349D8100CB2627 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				EC81B1E22534941900CB2627 /* Assets.xcassets */,
 				EC81B1E42534941900CB2627 /* LaunchScreen.storyboard */,
 				EC81B1E72534941900CB2627 /* Info.plist */,
+				EC81B1FB25349D8100CB2627 /* CanvasView.swift */,
 			);
 			path = Contest04;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			files = (
 				EC81B1DE2534941500CB2627 /* ViewController.swift in Sources */,
 				EC81B1DA2534941500CB2627 /* AppDelegate.swift in Sources */,
+				EC81B1FC25349D8100CB2627 /* CanvasView.swift in Sources */,
 				EC81B1DC2534941500CB2627 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
