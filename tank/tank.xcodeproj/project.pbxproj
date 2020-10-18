@@ -15,6 +15,7 @@
 		5B829297253C67EA003F8003 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B829295253C67EA003F8003 /* LaunchScreen.storyboard */; };
 		5B8292A2253C67EA003F8003 /* tankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8292A1253C67EA003F8003 /* tankTests.swift */; };
 		5B8292AD253C67EA003F8003 /* tankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8292AC253C67EA003F8003 /* tankUITests.swift */; };
+		5B8292BE253C6B3D003F8003 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8292BD253C6B3D003F8003 /* BoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		5B8292A8253C67EA003F8003 /* tankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B8292AC253C67EA003F8003 /* tankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tankUITests.swift; sourceTree = "<group>"; };
 		5B8292AE253C67EA003F8003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B8292BD253C6B3D003F8003 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				5B82928A253C67E9003F8003 /* AppDelegate.swift */,
 				5B82928C253C67E9003F8003 /* SceneDelegate.swift */,
+				5B8292BD253C6B3D003F8003 /* BoardView.swift */,
 				5B82928E253C67E9003F8003 /* ViewController.swift */,
 				5B829290253C67E9003F8003 /* Main.storyboard */,
 				5B829293253C67EA003F8003 /* Assets.xcassets */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B82928F253C67E9003F8003 /* ViewController.swift in Sources */,
+				5B8292BE253C6B3D003F8003 /* BoardView.swift in Sources */,
 				5B82928B253C67E9003F8003 /* AppDelegate.swift in Sources */,
 				5B82928D253C67E9003F8003 /* SceneDelegate.swift in Sources */,
 			);
