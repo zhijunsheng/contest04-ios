@@ -15,6 +15,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcC-Ag-4FY">
+                                <rect key="frame" x="20" y="756" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NcC-Ag-4FY" secondAttribute="height" multiplier="1:1" id="7AD-IM-WDu"/>
+                                    <constraint firstAttribute="height" constant="150" id="JnG-47-Qp7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <state key="normal" title="stop">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="34C-Zp-wGE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nm0-8Q-GFz">
+                                <rect key="frame" x="598" y="756" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nm0-8Q-GFz" secondAttribute="height" multiplier="1:1" id="tq2-iA-3b7"/>
+                                    <constraint firstAttribute="height" constant="150" id="yOH-Rg-tkG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="130"/>
+                                <state key="normal" title="go">
+                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="go:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jhx-55-dJi"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="luE-zw-vpp">
+                                <rect key="frame" x="18" y="974" width="732" height="31"/>
+                                <connections>
+                                    <action selector="move:" destination="BYZ-38-t0r" eventType="valueChanged" id="OZl-VP-fsG"/>
+                                </connections>
+                            </slider>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WdF-6J-gOK" customClass="TankView" customModule="contest04" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="728" height="728"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -25,12 +59,22 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="NcC-Ag-4FY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EG9-2g-j4C"/>
+                            <constraint firstItem="nm0-8Q-GFz" firstAttribute="top" secondItem="WdF-6J-gOK" secondAttribute="bottom" constant="8" id="JeG-yK-6lP"/>
+                            <constraint firstItem="NcC-Ag-4FY" firstAttribute="top" secondItem="WdF-6J-gOK" secondAttribute="bottom" constant="8" id="LLl-qU-22W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="luE-zw-vpp" secondAttribute="bottom" constant="20" id="PZD-YF-7yx"/>
                             <constraint firstItem="WdF-6J-gOK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Q8M-9Q-ZiI"/>
                             <constraint firstItem="WdF-6J-gOK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Rgq-ZL-Q9X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nm0-8Q-GFz" secondAttribute="trailing" constant="20" id="Wad-Wm-Vqs"/>
+                            <constraint firstItem="luE-zw-vpp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bbx-1k-S29"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="luE-zw-vpp" secondAttribute="trailing" constant="20" id="nVm-yF-Xyn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WdF-6J-gOK" secondAttribute="trailing" constant="20" id="wPS-Lk-J93"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tankView" destination="WdF-6J-gOK" id="MJg-K1-jev"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
