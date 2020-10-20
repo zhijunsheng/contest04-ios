@@ -9,12 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet var tankView: TankView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (_) in
+            self.tankView.delta += 5
+            self.tankView.setNeedsDisplay()
+        }
     }
-
-
 }
 
