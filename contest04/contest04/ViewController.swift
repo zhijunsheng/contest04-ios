@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     @IBAction func move(_ sender: UISlider) {
         timer?.invalidate()
         timer = nil
-        tankView.dtaX = CGFloat(sender.value)
+        tankView.dtaX = CGFloat(sender.value) - 200
         tankView.setNeedsDisplay()
     }
 }
