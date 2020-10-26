@@ -2,7 +2,7 @@ import UIKit
 
 class TankView: UIView {
 
-    let deltaX: CGFloat = 200
+    var deltaX: CGFloat = 0
     
     override func draw(_ rect: CGRect) {
 // wheel

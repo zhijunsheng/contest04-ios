@@ -1,20 +1,17 @@
-//
-//  ViewController.swift
-//  contest04
-//
-//  Created by ethan on 2020/10/19.
-//  Copyright © 2020 ethan. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tankView: TankView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func slide(_ sender: UISlider) {
+        print("\(sender.value)")
+        tankView.deltaX = CGFloat(sender.value)
+        
+        tankView.setNeedsDisplay()
+    }
 }
-
