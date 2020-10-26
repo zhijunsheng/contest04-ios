@@ -14,6 +14,7 @@
 		739D0D78253DBD5C00E0514A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 739D0D77253DBD5C00E0514A /* Assets.xcassets */; };
 		739D0D7B253DBD5C00E0514A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739D0D79253DBD5C00E0514A /* LaunchScreen.storyboard */; };
 		739D0D86253DBD5C00E0514A /* contest04Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D0D85253DBD5C00E0514A /* contest04Tests.swift */; };
+		739D0D91253DBE9700E0514A /* TankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D0D90253DBE9700E0514A /* TankView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		739D0D81253DBD5C00E0514A /* contest04Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = contest04Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		739D0D85253DBD5C00E0514A /* contest04Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contest04Tests.swift; sourceTree = "<group>"; };
 		739D0D87253DBD5C00E0514A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		739D0D90253DBE9700E0514A /* TankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				739D0D6E253DBD5800E0514A /* AppDelegate.swift */,
 				739D0D70253DBD5800E0514A /* SceneDelegate.swift */,
 				739D0D72253DBD5800E0514A /* ViewController.swift */,
+				739D0D90253DBE9700E0514A /* TankView.swift */,
 				739D0D74253DBD5800E0514A /* Main.storyboard */,
 				739D0D77253DBD5C00E0514A /* Assets.xcassets */,
 				739D0D79253DBD5C00E0514A /* LaunchScreen.storyboard */,
@@ -202,6 +205,7 @@
 			files = (
 				739D0D73253DBD5800E0514A /* ViewController.swift in Sources */,
 				739D0D6F253DBD5800E0514A /* AppDelegate.swift in Sources */,
+				739D0D91253DBE9700E0514A /* TankView.swift in Sources */,
 				739D0D71253DBD5800E0514A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
