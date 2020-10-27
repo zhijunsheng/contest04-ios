@@ -15,6 +15,7 @@
 		8267559C2535BE3D0030B63E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8267559A2535BE3D0030B63E /* LaunchScreen.storyboard */; };
 		826755A72535BE3E0030B63E /* contest04Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826755A62535BE3E0030B63E /* contest04Tests.swift */; };
 		826755B22535BE3E0030B63E /* contest04UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826755B12535BE3E0030B63E /* contest04UITests.swift */; };
+		826755C32535BFF50030B63E /* TankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826755C22535BFF50030B63E /* TankView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		826755AD2535BE3E0030B63E /* contest04UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = contest04UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		826755B12535BE3E0030B63E /* contest04UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contest04UITests.swift; sourceTree = "<group>"; };
 		826755B32535BE3E0030B63E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		826755C22535BFF50030B63E /* TankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				8267558F2535BE380030B63E /* AppDelegate.swift */,
 				826755912535BE380030B63E /* SceneDelegate.swift */,
 				826755932535BE380030B63E /* ViewController.swift */,
+				826755C22535BFF50030B63E /* TankView.swift */,
 				826755952535BE380030B63E /* Main.storyboard */,
 				826755982535BE3D0030B63E /* Assets.xcassets */,
 				8267559A2535BE3D0030B63E /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			files = (
 				826755942535BE380030B63E /* ViewController.swift in Sources */,
 				826755902535BE380030B63E /* AppDelegate.swift in Sources */,
+				826755C32535BFF50030B63E /* TankView.swift in Sources */,
 				826755922535BE380030B63E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
