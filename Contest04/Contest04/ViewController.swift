@@ -16,9 +16,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         var counter = 0
-        Timer.scheduledTimer(withTimeInterval: 0.11, repeats: true) { (_) in
+        Timer.scheduledTimer(withTimeInterval: 0.01, repeats:false) { (_) in
             print("abcd")
-            counter = counter + 5
+            counter = counter + 1
+            if counter == 795 {
+                counter = -800
+                return
+            }
             print(counter)
             self.canvasView.move = CGFloat(counter)
             self.canvasView.setNeedsDisplay()
@@ -29,3 +33,12 @@ class ViewController: UIViewController {
 
 }
 
+/*
+ 
+ N: 1, 2
+ Z: 1, 2, 10, 0, - 1, -2,
+ Q: 0.1, 0.2, 2/3, 1, 2, 10, 0.333333...
+    
+ R: |, π, e, √2, √3, √1,
+ C: ?
+ */
