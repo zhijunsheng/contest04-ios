@@ -13,9 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (_) in
-            self.tankView.delta += 5
+            if self.tankView.delta < self.tankView.bounds.width - self.tankView.offset {
+                self.tankView.delta += 1
+            } else {
+                self.tankView.delta = 0
+            }
             self.tankView.setNeedsDisplay()
         }
     }
 }
-
