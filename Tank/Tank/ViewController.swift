@@ -47,12 +47,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func goLeft(_ sender: Any) {
-        tankView.tankX -= 25
+        tankView.tankX -= 100
         tankView.setNeedsDisplay()
     }
     
     @IBAction func goRight(_ sender: Any) {
-        tankView.tankX += 25
+        tankView.tankX += 100
         tankView.setNeedsDisplay()
     }
 }

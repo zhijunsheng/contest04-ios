@@ -23,6 +23,14 @@ class TankView: UIView {
         if tankX < -500 {
             tankX = 1000
         }
+        
+        
+        let percentage: CGFloat = 1
+
+        
+        UIBezierPath(arcCenter: CGPoint(x: 200, y: 600), radius: 10, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true).fill()
+        
+        UIBezierPath(rect: CGRect(x: 200 - 50 * percentage, y: 600 - 50 *  percentage, width: 200 * percentage, height: 100 * percentage)).stroke()
     }
     
     func drawBody() {
@@ -74,6 +82,7 @@ class TankView: UIView {
     
     func drawWheel(x: CGFloat, y: CGFloat, radius: CGFloat) {
         let wheel = UIBezierPath(arcCenter: CGPoint(x: x, y: y), radius: radius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        wheel.lineWidth = 5
         wheel.stroke()
         
         drawWheelDesign(x: x, y: y, radius: radius, startAngle: tankX/radius, endAngle: tankX/radius + 0.25 * CGFloat.pi, color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
@@ -149,5 +158,10 @@ class TankView: UIView {
  ( 2√11) ^ 2 = 2 ^ 2 * √11 ^ 2 = 4 * 11
  (2 5) = 2 ^ 2 * 5 ^ 2 = 4 * 25
  (√2√2√5) = 2 * 2 * 5
+ 
+ 2π radians = 360 degrees
+ 1 km = 1000 m
+ 
+ radian ~ radius
  
  */
