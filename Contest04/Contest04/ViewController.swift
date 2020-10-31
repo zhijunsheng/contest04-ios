@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         var counter = 0
-        Timer.scheduledTimer(withTimeInterval: 0.01, repeats:false) { (_) in
+        Timer.scheduledTimer(withTimeInterval: 0.01, repeats:true) { (_) in
             print("abcd")
             counter = counter + 1
             if counter == 795 {
@@ -41,4 +41,17 @@ class ViewController: UIViewController {
     
  R: |, π, e, √2, √3, √1,
  C: ?
+ 
+ √25 = 5, 5 * 5 = 25
+ √4 = 2, (√4)^2 = 4
+ √16 = 4
+ √8 = ?
+ √8 = √(4 * 2) = √4 * √2 = 2√2,
+ 2√2 * 2√2 = 4 * √2 * √2 = 8
+ 
+ √12 = √(4 * 3) = √4 * √3 = 2√3, 2√3
+ 
+ 
+ 
+ 
  */
