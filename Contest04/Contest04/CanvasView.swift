@@ -11,7 +11,7 @@ import UIKit
 class CanvasView: UIView {
 
     var move:CGFloat = 1
-    
+    let offset: CGFloat = 600
     override func draw(_ rect: CGRect) {
         tank1()
         tank2()
@@ -143,34 +143,36 @@ class CanvasView: UIView {
     func tank() {
         let pencil = UIBezierPath()
         
-        pencil.move(to: CGPoint(x: 600 - move, y: 400))
-        pencil.addLine(to: CGPoint(x: 200 - move, y: 400))
-        pencil.addLine(to: CGPoint(x: 300 - move, y: 320))
-        pencil.addLine(to: CGPoint(x: 500 - move, y: 320))
-        pencil.addLine(to: CGPoint(x: 600 - move, y: 400))
-        
-        pencil.move(to: CGPoint(x: 600 - move, y: 400))
-        pencil.addLine(to: CGPoint(x: 600 - move, y: 450))
-        pencil.addLine(to: CGPoint(x: 200 - move, y: 450))
-        pencil.addLine(to: CGPoint(x: 200 - move, y: 400))
         
         
+        pencil.move(to: CGPoint(x: 600 + offset - move, y: 400))
+        pencil.addLine(to: CGPoint(x: 200 + offset - move, y: 400))
+        pencil.addLine(to: CGPoint(x: 300 + offset - move, y: 320))
+        pencil.addLine(to: CGPoint(x: 500 + offset - move, y: 320))
+        pencil.addLine(to: CGPoint(x: 600 + offset - move, y: 400))
         
-        pencil.move(to: CGPoint(x: 120 - move, y: 330))
-        pencil.addLine(to: CGPoint(x: 290 - move, y: 330))
-        pencil.move(to: CGPoint(x: 120 - move, y: 360))
-        pencil.addLine(to: CGPoint(x: 250 - move, y: 360))
-        pencil.move(to: CGPoint(x: 120 - move, y: 330))
-        pencil.addLine(to: CGPoint(x: 120 - move, y: 360))
+        pencil.move(to: CGPoint(x: 600 + offset - move, y: 400))
+        pencil.addLine(to: CGPoint(x: 600 + offset - move, y: 450))
+        pencil.addLine(to: CGPoint(x: 200 + offset - move, y: 450))
+        pencil.addLine(to: CGPoint(x: 200 + offset - move, y: 400))
+        
+        
+        
+        pencil.move(to: CGPoint(x: 120 + offset - move, y: 330))
+        pencil.addLine(to: CGPoint(x: 290 + offset - move, y: 330))
+        pencil.move(to: CGPoint(x: 120 + offset - move, y: 360))
+        pencil.addLine(to: CGPoint(x: 250 + offset - move, y: 360))
+        pencil.move(to: CGPoint(x: 120 + offset - move, y: 330))
+        pencil.addLine(to: CGPoint(x: 120 + offset - move, y: 360))
         pencil.stroke()
         
         
         
         let l = UIBezierPath()
         for i in 0..<5 {
-            l.move(to: CGPoint(x: 320 - move + CGFloat(i) * 45, y: 320))
-            l.addLine(to: CGPoint(x: 350 - move + CGFloat(i) * 45, y: 320))
-            l.addLine(to: CGPoint(x: 200 - move + CGFloat(i) * 45, y: 400))
+            l.move(to: CGPoint(x: 320 + offset - move + CGFloat(i) * 45, y: 320))
+            l.addLine(to: CGPoint(x: 350 + offset - move + CGFloat(i) * 45, y: 320))
+            l.addLine(to: CGPoint(x: 200 + offset - move + CGFloat(i) * 45, y: 400))
             l.close()
         }
         
@@ -180,9 +182,9 @@ class CanvasView: UIView {
         
         let l1 = UIBezierPath()
         for i in 0..<5 {
-            l1.move(to: CGPoint(x: 200 - move + CGFloat(i) * 45, y: 400))
-            l1.addLine(to: CGPoint(x: 245 - move + CGFloat(i) * 45, y: 400))
-            l1.addLine(to: CGPoint(x: 200 - move + CGFloat(i) * 45, y: 450))
+            l1.move(to: CGPoint(x: 200 + offset - move + CGFloat(i) * 45, y: 400))
+            l1.addLine(to: CGPoint(x: 245 + offset - move + CGFloat(i) * 45, y: 400))
+            l1.addLine(to: CGPoint(x: 200 + offset - move + CGFloat(i) * 45, y: 450))
             l1.close()
         }
         
@@ -191,23 +193,26 @@ class CanvasView: UIView {
         l1.stroke()
         
     }
+    
     func circle() {
+        
         for i in 1..<9 {
-            let wheel = UIBezierPath(arcCenter: CGPoint(x: 175 - move + CGFloat(i) * 50, y: 475), radius: 25, startAngle: 0 * CGFloat.pi, endAngle: 2 * CGFloat.pi, clockwise: true)
+            let wheel = UIBezierPath(arcCenter: CGPoint(x: 175 + offset - move + CGFloat(i) * 50, y: 475), radius: 25, startAngle: 0 * CGFloat.pi, endAngle: 2 * CGFloat.pi, clockwise: true)
             wheel.stroke()
-            let interesting = UIBezierPath(arcCenter: CGPoint(x: 175 - move + CGFloat(i) * 50, y: 475), radius: 25, startAngle: 0 * CGFloat.pi - move / 25, endAngle: 1.5 * CGFloat.pi - move / 25, clockwise: false)
-            interesting.addLine(to: CGPoint(x: 175 - move +  CGFloat(i) * 50, y: 475))
+            let interesting = UIBezierPath(arcCenter: CGPoint(x: 175 + offset - move + CGFloat(i) * 50, y: 475), radius: 25, startAngle: 0 * CGFloat.pi - move / 25, endAngle: 1.5 * CGFloat.pi - move / 25, clockwise: false)
+            interesting.addLine(to: CGPoint(x: 175 + offset - move +  CGFloat(i) * 50, y: 475))
             interesting.close()
             #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).setFill()
             interesting.fill()
             interesting.stroke()
         }
     }
+    
     func i() {
         let pencil = UIBezierPath()
         
-        pencil.move(to: CGPoint(x: 575 - move, y: 500))
-        pencil.addLine(to: CGPoint(x: 225 - move, y: 500))
+        pencil.move(to: CGPoint(x: 575 + offset - move, y: 500))
+        pencil.addLine(to: CGPoint(x: 225 + offset - move, y: 500))
         pencil.stroke()
         
         
