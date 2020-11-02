@@ -24,25 +24,25 @@ class TankView: UIView {
     }
     
     func drawTrack() {
-        let pen = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 0 + deltaX , y: 500), radius: 40, startAngle: 0.5 * CGFloat.pi + deltaX , endAngle: 1.5 * CGFloat.pi + deltaX, clockwise: true)
-
-        pen.stroke()
-        
-        let pen1 = UIBezierPath()
-        pen1.move(to: CGPoint(x: 170 + deltaX, y: 460))
-        pen1.addLine(to: CGPoint(x: 590 + deltaX, y: 460))
+        let pen1 = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 0 + deltaX , y: 500), radius: 40, startAngle: 0.5 * CGFloat.pi , endAngle: 1.5 * CGFloat.pi, clockwise: true)
 
         pen1.stroke()
         
-        let pen2 = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 6 + deltaX, y: 500), radius: 40, startAngle: 1.5 * CGFloat.pi, endAngle: 0.5 * CGFloat.pi, clockwise: true)
+        let pen2 = UIBezierPath()
+        pen2.move(to: CGPoint(x: 170 + deltaX, y: 460))
+        pen2.addLine(to: CGPoint(x: 590 + deltaX, y: 460))
 
         pen2.stroke()
-
-        let pen3 = UIBezierPath()
-        pen3.move(to: CGPoint(x: 170 + deltaX, y: 540))
-        pen3.addLine(to: CGPoint(x: 590 + deltaX, y: 540))
+        
+        let pen3 = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 6 + deltaX, y: 500), radius: 40, startAngle: 1.5 * CGFloat.pi , endAngle: 0.5 * CGFloat.pi, clockwise: true)
 
         pen3.stroke()
+
+        let pen4 = UIBezierPath()
+        pen4.move(to: CGPoint(x: 170 + deltaX, y: 540))
+        pen4.addLine(to: CGPoint(x: 590 + deltaX, y: 540))
+
+        pen4.stroke()
     }
     
     func drawBody() {
