@@ -13,7 +13,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
+        Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (_) in
+            self.boardView.movement = self.boardView.movement + 1
+            self.boardView.setNeedsDisplay()
+        }
+        Timer.scheduledTimer(withTimeInterval: 0.000000001, repeats: true) { (_) in
+            self.boardView.rocketMovement = self.boardView.rocketMovement + 3
+            self.boardView.setNeedsDisplay()
+        }
+
     }
 
     @IBAction func tankMovementSlider(_ sender: UISlider) {
