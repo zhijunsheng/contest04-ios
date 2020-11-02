@@ -9,10 +9,7 @@ class TankView: UIView {
         drawTrack()
         drawBody()
         drawCannon()
-        
-        let pen = UIBezierPath(arcCenter: CGPoint(x: 400, y: 200), radius: 30, startAngle: 0 * CGFloat.pi + deltaX , endAngle: 2 * CGFloat.pi + deltaX, clockwise: true)
-
-        pen.stroke()
+        drawSector()
     }
     
     func drawWheel() {
@@ -22,6 +19,18 @@ class TankView: UIView {
             pen.stroke()
         }
     }
+    
+    func drawSector() {
+        let pen = UIBezierPath(arcCenter: CGPoint(x:  170 + 70 * 0 + deltaX, y: 500), radius: 30, startAngle: 1.5 * CGFloat.pi + deltaX / 30, endAngle: 2 * CGFloat.pi + deltaX / 30, clockwise: true)
+        pen.addLine(to: CGPoint(x: 170 + 70 * 0 + deltaX, y: 500))
+        pen.close()
+        
+        #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1).setFill()
+        pen.fill()
+        #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1).setStroke()
+        pen.stroke()
+    }
+    
     
     func drawTrack() {
         let pen1 = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 0 + deltaX , y: 500), radius: 40, startAngle: 0.5 * CGFloat.pi , endAngle: 1.5 * CGFloat.pi, clockwise: true)
