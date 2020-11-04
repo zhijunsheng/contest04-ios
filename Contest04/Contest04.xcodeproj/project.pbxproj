@@ -14,6 +14,7 @@
 		A554CD21254227D200BB8914 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A554CD20254227D200BB8914 /* Assets.xcassets */; };
 		A554CD24254227D200BB8914 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A554CD22254227D200BB8914 /* LaunchScreen.storyboard */; };
 		A554CD2F254227D200BB8914 /* Contest04Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A554CD2E254227D200BB8914 /* Contest04Tests.swift */; };
+		A554CD3A2542283A00BB8914 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A554CD392542283A00BB8914 /* BoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		A554CD2A254227D200BB8914 /* Contest04Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Contest04Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A554CD2E254227D200BB8914 /* Contest04Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contest04Tests.swift; sourceTree = "<group>"; };
 		A554CD30254227D200BB8914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A554CD392542283A00BB8914 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				A554CD17254227CD00BB8914 /* AppDelegate.swift */,
 				A554CD19254227CD00BB8914 /* SceneDelegate.swift */,
 				A554CD1B254227CD00BB8914 /* ViewController.swift */,
+				A554CD392542283A00BB8914 /* BoardView.swift */,
 				A554CD1D254227CD00BB8914 /* Main.storyboard */,
 				A554CD20254227D200BB8914 /* Assets.xcassets */,
 				A554CD22254227D200BB8914 /* LaunchScreen.storyboard */,
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A554CD1C254227CD00BB8914 /* ViewController.swift in Sources */,
+				A554CD3A2542283A00BB8914 /* BoardView.swift in Sources */,
 				A554CD18254227CD00BB8914 /* AppDelegate.swift in Sources */,
 				A554CD1A254227CD00BB8914 /* SceneDelegate.swift in Sources */,
 			);
