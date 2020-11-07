@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         Timer.scheduledTimer(withTimeInterval: 0.01, repeats:true) { (_) in
             print("abcd")
             counter = counter + 1
-            if counter == 795 {
+            if counter == 1205 {
                 counter = -800
                 return
             }

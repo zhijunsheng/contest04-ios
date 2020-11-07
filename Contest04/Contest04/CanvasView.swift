@@ -15,6 +15,7 @@ class CanvasView: UIView {
     override func draw(_ rect: CGRect) {
         tank1()
         tank2()
+        tank3()
     }
     
     // drawTrack, drawWheels, turret, cannon, body,
@@ -166,6 +167,16 @@ class CanvasView: UIView {
         pencil.addLine(to: CGPoint(x: 120 + offset - move, y: 360))
         pencil.stroke()
         
+        pencil.move(to: CGPoint(x: 300 + offset - move, y: 320))
+        pencil.addLine(to: CGPoint(x: 300 + offset - move, y: 260))
+        pencil.addLine(to: CGPoint(x: 500 + offset - move, y: 260))
+        pencil.addLine(to: CGPoint(x: 500 + offset - move, y: 320))
+        pencil.stroke()
+        
+        for i in 1..<4 {
+            let wheel = UIBezierPath(arcCenter: CGPoint(x: 275 + offset - move + CGFloat(i) * 50, y: 260), radius: 25, startAngle: 1 * CGFloat.pi, endAngle: 2 * CGFloat.pi, clockwise: true)
+            wheel.stroke()
+        }
         
         
         let l = UIBezierPath()
@@ -217,6 +228,12 @@ class CanvasView: UIView {
         
         
     }
+    func tank3() {
+           
+       }
+//    func  () {
+//        <#function body#>
+//    }
 }
 
 /*
