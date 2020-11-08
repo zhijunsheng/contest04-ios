@@ -12,115 +12,132 @@ class BoardView: UIView {
     
     var centreXDelta: CGFloat = 0
     
-
     override func draw(_ rect: CGRect) {
+        drawWheel()
+        drawGun()
+        drawTrack()
+        drawBody()
+    }
+    
+    func drawTrack() {
         let topTrack = UIBezierPath()
-        topTrack.move(to: CGPoint(x: 150, y: 400))
-        topTrack.addLine(to: CGPoint(x: 450, y: 400))
+        topTrack.move(to: CGPoint(x: 150 + centreXDelta, y: 400))
+        topTrack.addLine(to: CGPoint(x: 450 + centreXDelta, y: 400))
         topTrack.stroke()
         
-        drawWheel()
-        
         let bottomTrack = UIBezierPath()
-        bottomTrack.move(to: CGPoint(x: 150, y: 430 + 30))
-        bottomTrack.addLine(to: CGPoint(x: 450, y: 430 + 30))
+        bottomTrack.move(to: CGPoint(x: 150 + centreXDelta, y: 430 + 30))
+        bottomTrack.addLine(to: CGPoint(x: 450 + centreXDelta, y: 430 + 30))
         bottomTrack.stroke()
-        
-        let body = UIBezierPath(rect: CGRect(x: 170, y: 320, width: 250, height: 80))
+    }
+    
+    func drawBody() {
+        let body = UIBezierPath(rect: CGRect(x: 170 + centreXDelta, y: 320, width: 250, height: 80))
+        #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1).setFill()
+        body.fill()
         body.stroke()
         
-        let upperPart = UIBezierPath(rect: CGRect(x: 220, y: 270, width: 150, height: 50))
+        let upperPart = UIBezierPath()
+        upperPart.move(to: CGPoint(x: 220 + centreXDelta, y: 270))
+        upperPart.addLine(to: CGPoint(x: 370 + centreXDelta, y: 270))
+        upperPart.addLine(to: CGPoint(x: 390 + centreXDelta, y: 320))
+        upperPart.addLine(to: CGPoint(x: 205 + centreXDelta, y: 320))
+        upperPart.close()
+        upperPart.fill()
         upperPart.stroke()
         
-        let turret = UIBezierPath(arcCenter: CGPoint(x: 300, y: 270), radius: 40, startAngle: 0, endAngle: CGFloat.pi, clockwise: false)
+    }
+    
+    func drawGun() {
+        let turret = UIBezierPath(arcCenter: CGPoint(x: 300 + centreXDelta, y: 270), radius: 40, startAngle: 0, endAngle: CGFloat.pi, clockwise: false)
+        #colorLiteral(red: 0.1294117719, green: 0.2156862766, blue: 0.06666667014, alpha: 1).setFill()
+        turret.fill()
         turret.stroke()
         
         let gunPart = UIBezierPath()
-        gunPart.move(to: CGPoint(x: 309, y: 230))
-        gunPart.addLine(to: CGPoint(x: 400, y: 150))
-        gunPart.move(to: CGPoint(x: 335, y: 250))
-        gunPart.addLine(to: CGPoint(x: 426, y: 180))
+        gunPart.move(to: CGPoint(x: 309 + centreXDelta, y: 230))
+        gunPart.addLine(to: CGPoint(x: 400 + centreXDelta, y: 150))
+        gunPart.addLine(to: CGPoint(x: 426 + centreXDelta, y: 180))
+         gunPart.addLine(to: CGPoint(x: 335 + centreXDelta, y: 250))
+        gunPart.close()
+        #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1).setFill()
+        gunPart.fill()
         gunPart.stroke()
         
         let gunTip = UIBezierPath()
-        gunTip.move(to: CGPoint(x: 383, y: 130))
-        gunTip.addLine(to: CGPoint(x: 410, y: 105))
-        gunTip.addLine(to: CGPoint(x: 455, y: 167))
-        gunTip.addLine(to: CGPoint(x: 435, y: 192))
+        gunTip.move(to: CGPoint(x: 383 + centreXDelta, y: 130))
+        gunTip.addLine(to: CGPoint(x: 410 + centreXDelta, y: 105))
+        gunTip.addLine(to: CGPoint(x: 455 + centreXDelta, y: 167))
+        gunTip.addLine(to: CGPoint(x: 435 + centreXDelta, y: 192))
         gunTip.close()
+        #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1).setFill()
+        gunTip.fill()
         gunTip.stroke()
-
-        
-        
-    
-        
-        // radians ~ degress
-        // 2π radians = 360 degrees
-        // 1 km = 1000 m
-        // radian ? radius
     }
     
     func drawWheel() {
-        let wheel = UIBezierPath(arcCenter: CGPoint(x: 150, y: 430), radius: 30, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let wheel = UIBezierPath(arcCenter: CGPoint(x: 150 + centreXDelta, y: 430), radius: 30, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).setFill()
         wheel.stroke()
+        wheel.fill()
         
-        let wheelArc = UIBezierPath(arcCenter: CGPoint(x: 150, y: 430), radius: 30, startAngle: 0 + centreXDelta / 20, endAngle: 0.5 * CGFloat.pi + centreXDelta / 20, clockwise: true)
-        wheelArc.addLine(to: CGPoint(x: 150, y: 430))
+        let wheelArc = UIBezierPath(arcCenter: CGPoint(x: 150 + centreXDelta, y: 430), radius: 30, startAngle: 0 + centreXDelta / 20, endAngle: 0.5 * CGFloat.pi + centreXDelta / 20, clockwise: true)
+        wheelArc.addLine(to: CGPoint(x: 150 + centreXDelta, y: 430))
         wheelArc.close()
+        #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).setFill()
         wheelArc.fill()
         
-        let secondWheelArc = UIBezierPath(arcCenter: CGPoint(x: 150, y: 430), radius: 30, startAngle: CGFloat.pi + centreXDelta / 20, endAngle: -0.5 * CGFloat.pi + centreXDelta / 20, clockwise: true)
-        secondWheelArc.addLine(to: CGPoint(x: 150, y: 430))
+        let secondWheelArc = UIBezierPath(arcCenter: CGPoint(x: 150 + centreXDelta, y: 430), radius: 30, startAngle: CGFloat.pi + centreXDelta / 20, endAngle: -0.5 * CGFloat.pi + centreXDelta / 20, clockwise: true)
+        secondWheelArc.addLine(to: CGPoint(x: 150 + centreXDelta, y: 430))
         secondWheelArc.close()
         secondWheelArc.fill()
         
-        let wheel1 = UIBezierPath(arcCenter: CGPoint(x: 250, y: 430), radius: 30, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let wheel1 = UIBezierPath(arcCenter: CGPoint(x: 250 + centreXDelta, y: 430), radius: 30, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).setFill()
         wheel1.stroke()
+        wheel1.fill()
         
-        let wheel1Arc = UIBezierPath(arcCenter: CGPoint(x: 250, y: 430), radius: 30, startAngle: 0 + centreXDelta / 20, endAngle: 0.5 * CGFloat.pi + centreXDelta / 20, clockwise: true)
-        wheel1Arc.addLine(to: CGPoint(x: 250, y: 430))
+        let wheel1Arc = UIBezierPath(arcCenter: CGPoint(x: 250 + centreXDelta, y: 430), radius: 30, startAngle: 0 + centreXDelta / 20, endAngle: 0.5 * CGFloat.pi + centreXDelta / 20, clockwise: true)
+        wheel1Arc.addLine(to: CGPoint(x: 250 + centreXDelta, y: 430))
         wheel1Arc.close()
+        #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).setFill()
         wheel1Arc.fill()
         
-        let secondWheel1Arc = UIBezierPath(arcCenter: CGPoint(x: 250, y: 430), radius: 30, startAngle: CGFloat.pi + centreXDelta / 20, endAngle: -0.5 * CGFloat.pi + centreXDelta / 20, clockwise: true)
-        secondWheel1Arc.addLine(to: CGPoint(x: 250, y: 430))
+        let secondWheel1Arc = UIBezierPath(arcCenter: CGPoint(x: 250 + centreXDelta, y: 430), radius: 30, startAngle: CGFloat.pi + centreXDelta / 20, endAngle: -0.5 * CGFloat.pi + centreXDelta / 20, clockwise: true)
+        secondWheel1Arc.addLine(to: CGPoint(x: 250 + centreXDelta, y: 430))
         secondWheel1Arc.close()
         secondWheel1Arc.fill()
         
-        let wheel2 = UIBezierPath(arcCenter: CGPoint(x: 350, y: 430), radius: 30, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let wheel2 = UIBezierPath(arcCenter: CGPoint(x: 350 + centreXDelta, y: 430), radius: 30, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).setFill()
         wheel2.stroke()
+        wheel2.fill()
         
-        let wheel2Arc = UIBezierPath(arcCenter: CGPoint(x: 350, y: 430), radius: 30, startAngle: 0 + centreXDelta / 20, endAngle: 0.5 * CGFloat.pi + centreXDelta / 20, clockwise: true)
-        wheel2Arc.addLine(to: CGPoint(x: 350, y: 430))
+        let wheel2Arc = UIBezierPath(arcCenter: CGPoint(x: 350 + centreXDelta, y: 430), radius: 30, startAngle: 0 + centreXDelta / 20, endAngle: 0.5 * CGFloat.pi + centreXDelta / 20, clockwise: true)
+        wheel2Arc.addLine(to: CGPoint(x: 350 + centreXDelta, y: 430))
         wheel2Arc.close()
+        #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).setFill()
         wheel2Arc.fill()
         
-        let secondWheel2Arc = UIBezierPath(arcCenter: CGPoint(x: 350, y: 430), radius: 30, startAngle: CGFloat.pi + centreXDelta / 20, endAngle: -0.5 * CGFloat.pi + centreXDelta / 20, clockwise: true)
-        secondWheel2Arc.addLine(to: CGPoint(x: 350, y: 430))
+        let secondWheel2Arc = UIBezierPath(arcCenter: CGPoint(x: 350 + centreXDelta, y: 430), radius: 30, startAngle: CGFloat.pi + centreXDelta / 20, endAngle: -0.5 * CGFloat.pi + centreXDelta / 20, clockwise: true)
+        secondWheel2Arc.addLine(to: CGPoint(x: 350 + centreXDelta, y: 430))
         secondWheel2Arc.close()
         secondWheel2Arc.fill()
         
-        let wheel3 = UIBezierPath(arcCenter: CGPoint(x: 450, y: 430), radius: 30, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let wheel3 = UIBezierPath(arcCenter: CGPoint(x: 450 + centreXDelta, y: 430), radius: 30, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).setFill()
         wheel3.stroke()
+        wheel3.fill()
         
-        let wheel3Arc = UIBezierPath(arcCenter: CGPoint(x: 450, y: 430), radius: 30, startAngle: 0 + centreXDelta / 20, endAngle: 0.5 * CGFloat.pi + centreXDelta / 20, clockwise: true)
-        wheel3Arc.addLine(to: CGPoint(x: 450, y: 430))
+        let wheel3Arc = UIBezierPath(arcCenter: CGPoint(x: 450 + centreXDelta, y: 430), radius: 30, startAngle: 0 + centreXDelta / 20, endAngle: 0.5 * CGFloat.pi + centreXDelta / 20, clockwise: true)
+        wheel3Arc.addLine(to: CGPoint(x: 450 + centreXDelta, y: 430))
         wheel3Arc.close()
+        #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).setFill()
         wheel3Arc.fill()
         
-        let secondWheel3Arc = UIBezierPath(arcCenter: CGPoint(x: 450, y: 430), radius: 30, startAngle: CGFloat.pi + centreXDelta / 20, endAngle: -0.5 * CGFloat.pi + centreXDelta / 20, clockwise: true)
-        secondWheel3Arc.addLine(to: CGPoint(x: 450, y: 430))
+        let secondWheel3Arc = UIBezierPath(arcCenter: CGPoint(x: 450 + centreXDelta, y: 430), radius: 30, startAngle: CGFloat.pi + centreXDelta / 20, endAngle: -0.5 * CGFloat.pi + centreXDelta / 20, clockwise: true)
+        secondWheel3Arc.addLine(to: CGPoint(x: 450 + centreXDelta, y: 430))
         secondWheel3Arc.close()
         secondWheel3Arc.fill()
     }
 }
-
-/*
- 
- N: 3, 10
- Z: -9, 51, 0,
- Q: 1.5, 7, 13, 6.77777..., 4/9
- R: π, √2
- C: ?
- 
- */
