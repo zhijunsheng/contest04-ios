@@ -1,90 +1,98 @@
 import UIKit
 class TankView: UIView {
+    
+    var piLenth: CGFloat = 0
+    var xMove: CGFloat = 0
+    var boomMove: CGFloat = 0
+    
     override func draw(_ rect: CGRect) {
+        let image = UIImage(named: "bullet")
+        image?.draw(in: CGRect(x: 340 + boomMove + xMove, y: 85, width: 100, height: 50))
         drawShapeSix()
         drawWheels()
         drawlines()
         drawEngine()
+        drawLight()
     }
     func drawWheels() {
         #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).setFill()
-        let wheel1 = UIBezierPath(ovalIn: CGRect(x: 100, y: 200, width: 50, height: 50))
+        let wheel1 = UIBezierPath(ovalIn: CGRect(x: 100 + xMove, y: 200, width: 50, height: 50))
         wheel1.stroke()
         wheel1.fill()
         
-        let wheel2 = UIBezierPath(ovalIn: CGRect(x: 170, y: 200, width: 100, height: 100))
+        let wheel2 = UIBezierPath(ovalIn: CGRect(x: 170 + xMove, y: 200, width: 100, height: 100))
         wheel2.stroke()
         wheel2.fill()
         
-        let wheel3 = UIBezierPath(ovalIn: CGRect(x: 290, y: 200, width: 100, height: 100))
+        let wheel3 = UIBezierPath(ovalIn: CGRect(x: 290 + xMove, y: 200, width: 100, height: 100))
         wheel3.stroke()
         wheel3.fill()
         
-        let wheel4 = UIBezierPath(ovalIn: CGRect(x: 410, y: 200, width: 100, height: 100))
+        let wheel4 = UIBezierPath(ovalIn: CGRect(x: 410 + xMove, y: 200, width: 100, height: 100))
         wheel4.stroke()
         wheel4.fill()
         
-        let wheel5 = UIBezierPath(ovalIn: CGRect(x: 530, y: 200, width: 50, height: 50))
+        let wheel5 = UIBezierPath(ovalIn: CGRect(x: 530 + xMove, y: 200, width: 50, height: 50))
         wheel5.stroke()
         wheel5.fill()
         
         #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1).setFill()
-        let l1wheel2 = UIBezierPath(arcCenter: CGPoint(x: 220, y: 250), radius: 50, startAngle: 0, endAngle: CGFloat.pi / 2, clockwise: true)
+        let l1wheel2 = UIBezierPath(arcCenter: CGPoint(x: 220 + xMove, y: 250), radius: 50, startAngle: piLenth, endAngle: CGFloat.pi / 2 + piLenth, clockwise: true)
         l1wheel2.fill()
-        let l2wheel2 = UIBezierPath(arcCenter: CGPoint(x: 220, y: 250), radius: 50, startAngle: CGFloat.pi, endAngle: CGFloat.pi * 1.5, clockwise: true)
+        let l2wheel2 = UIBezierPath(arcCenter: CGPoint(x: 220 + xMove, y: 250), radius: 50, startAngle: CGFloat.pi + piLenth, endAngle: CGFloat.pi * 1.5 + piLenth, clockwise: true)
         l2wheel2.fill()
         
-        let l1wheel3 = UIBezierPath(arcCenter: CGPoint(x: 340, y: 250), radius: 50, startAngle: 0, endAngle: CGFloat.pi / 2, clockwise: true)
+        let l1wheel3 = UIBezierPath(arcCenter: CGPoint(x: 340 + xMove, y: 250), radius: 50, startAngle: piLenth, endAngle: CGFloat.pi / 2 + piLenth, clockwise: true)
         l1wheel3.fill()
-        let l2wheel3 = UIBezierPath(arcCenter: CGPoint(x: 340, y: 250), radius: 50, startAngle: CGFloat.pi, endAngle: CGFloat.pi * 1.5, clockwise: true)
+        let l2wheel3 = UIBezierPath(arcCenter: CGPoint(x: 340 + xMove, y: 250), radius: 50, startAngle: CGFloat.pi + piLenth, endAngle: CGFloat.pi * 1.5 + piLenth, clockwise: true)
         l2wheel3.fill()
         
-        let l1wheel4 = UIBezierPath(arcCenter: CGPoint(x: 460, y: 250), radius: 50, startAngle: 0, endAngle: CGFloat.pi / 2, clockwise: true)
+        let l1wheel4 = UIBezierPath(arcCenter: CGPoint(x: 460 + xMove, y: 250), radius: 50, startAngle: piLenth, endAngle: CGFloat.pi / 2 + piLenth, clockwise: true)
         l1wheel4.fill()
-        let l2wheel4 = UIBezierPath(arcCenter: CGPoint(x: 460, y: 250), radius: 50, startAngle: CGFloat.pi, endAngle: CGFloat.pi * 1.5, clockwise: true)
+        let l2wheel4 = UIBezierPath(arcCenter: CGPoint(x: 460 + xMove, y: 250), radius: 50, startAngle: CGFloat.pi + piLenth, endAngle: CGFloat.pi * 1.5 + piLenth, clockwise: true)
         l2wheel4.fill()
         
         #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1).setFill()
-        let l1wheel1 = UIBezierPath(arcCenter: CGPoint(x: 125, y: 225), radius: 25, startAngle: 0, endAngle: CGFloat.pi / 2, clockwise: true)
+        let l1wheel1 = UIBezierPath(arcCenter: CGPoint(x: 125 + xMove, y: 225), radius: 25, startAngle: piLenth * 2, endAngle: CGFloat.pi / 2 + piLenth * 2, clockwise: true)
         l1wheel1.fill()
-        let l2wheel1 = UIBezierPath(arcCenter: CGPoint(x: 125, y: 225), radius: 25, startAngle: CGFloat.pi, endAngle: CGFloat.pi * 1.5, clockwise: true)
+        let l2wheel1 = UIBezierPath(arcCenter: CGPoint(x: 125 + xMove, y: 225), radius: 25, startAngle: CGFloat.pi + piLenth * 2, endAngle: CGFloat.pi * 1.5 + piLenth * 2, clockwise: true)
         l2wheel1.fill()
         
-        let l1wheel5 = UIBezierPath(arcCenter: CGPoint(x: 555, y: 225), radius: 25, startAngle: 0, endAngle: CGFloat.pi / 2, clockwise: true)
+        let l1wheel5 = UIBezierPath(arcCenter: CGPoint(x: 555 + xMove, y: 225), radius: 25, startAngle: piLenth * 2, endAngle: CGFloat.pi / 2 + piLenth * 2, clockwise: true)
         l1wheel5.fill()
-        let l2wheel5 = UIBezierPath(arcCenter: CGPoint(x: 555, y: 225), radius: 25, startAngle: CGFloat.pi, endAngle: CGFloat.pi * 1.5, clockwise: true)
+        let l2wheel5 = UIBezierPath(arcCenter: CGPoint(x: 555 + xMove, y: 225), radius: 25, startAngle: CGFloat.pi + piLenth * 2, endAngle: CGFloat.pi * 1.5 + piLenth * 2, clockwise: true)
         l2wheel5.fill()
     }
     func drawlines() {
         let line1 = UIBezierPath()
-        line1.move(to: CGPoint(x: 125, y: 200))
-        line1.addLine(to: CGPoint(x: 555, y: 200))
+        line1.move(to: CGPoint(x: 125 + xMove, y: 200))
+        line1.addLine(to: CGPoint(x: 555 + xMove, y: 200))
         line1.stroke()
         
         let line2 = UIBezierPath()
-        line2.move(to: CGPoint(x: 220, y: 300))
-        line2.addLine(to: CGPoint(x: 460, y: 300))
+        line2.move(to: CGPoint(x: 220 + xMove, y: 300))
+        line2.addLine(to: CGPoint(x: 460 + xMove, y: 300))
         line2.stroke()
         
         let line3 = UIBezierPath()
-        line3.move(to: CGPoint(x: 109, y: 245))
-        line3.addLine(to: CGPoint(x: 200, y: 296))
+        line3.move(to: CGPoint(x: 109 + xMove, y: 245))
+        line3.addLine(to: CGPoint(x: 200 + xMove, y: 296))
         line3.stroke()
         
         let line4 = UIBezierPath()
-        line4.move(to: CGPoint(x: 571, y: 245))
-        line4.addLine(to: CGPoint(x: 480, y: 296))
+        line4.move(to: CGPoint(x: 571 + xMove, y: 245))
+        line4.addLine(to: CGPoint(x: 480 + xMove, y: 296))
         line4.stroke()
     }
     func drawShapeSix() {
         #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1).setFill()
          let line111 = UIBezierPath()
-         line111.move(to: CGPoint(x: 85, y: 185))
-         line111.addLine(to: CGPoint(x: 595, y: 185))
-         line111.addLine(to: CGPoint(x: 595, y: 245))
-         line111.addLine(to: CGPoint(x: 560, y: 270))
-         line111.addLine(to: CGPoint(x: 120, y: 270))
-         line111.addLine(to: CGPoint(x: 85, y: 245))
+         line111.move(to: CGPoint(x: 85 + xMove, y: 185))
+         line111.addLine(to: CGPoint(x: 595 + xMove, y: 185))
+         line111.addLine(to: CGPoint(x: 595 + xMove, y: 245))
+         line111.addLine(to: CGPoint(x: 560 + xMove, y: 270))
+         line111.addLine(to: CGPoint(x: 120 + xMove, y: 270))
+         line111.addLine(to: CGPoint(x: 85 + xMove, y: 245))
          line111.close()
          line111.stroke()
          line111.fill()
@@ -93,31 +101,42 @@ class TankView: UIView {
     func drawEngine() {
         #colorLiteral(red: 0.7208145261, green: 0.886048913, blue: 0.5924729109, alpha: 1).setFill()
         let engineBottom = UIBezierPath()
-        engineBottom.move(to: CGPoint(x: 170, y: 185))
-        engineBottom.addLine(to: CGPoint(x: 170, y: 135))
-        engineBottom.addLine(to: CGPoint(x: 400, y: 135))
-        engineBottom.addLine(to: CGPoint(x: 400, y: 185))
+        engineBottom.move(to: CGPoint(x: 170 + xMove, y: 185))
+        engineBottom.addLine(to: CGPoint(x: 170 + xMove, y: 135))
+        engineBottom.addLine(to: CGPoint(x: 400 + xMove, y: 135))
+        engineBottom.addLine(to: CGPoint(x: 400 + xMove, y: 185))
         engineBottom.close()
         engineBottom.stroke()
         engineBottom.fill()
         
         let engineTop = UIBezierPath()
-        engineTop.move(to: CGPoint(x: 220, y: 135))
-        engineTop.addLine(to: CGPoint(x: 220, y: 85))
-        engineTop.addLine(to: CGPoint(x: 340, y: 85))
-        engineTop.addLine(to: CGPoint(x: 340, y: 135))
+        engineTop.move(to: CGPoint(x: 220 + xMove, y: 135))
+        engineTop.addLine(to: CGPoint(x: 220 + xMove, y: 85))
+        engineTop.addLine(to: CGPoint(x: 340 + xMove, y: 85))
+        engineTop.addLine(to: CGPoint(x: 340 + xMove, y: 135))
         engineTop.close()
         engineTop.stroke()
         engineTop.fill()
         
         let engineCannon = UIBezierPath()
-        engineCannon.move(to: CGPoint(x: 340, y: 100))
-        engineCannon.addLine(to: CGPoint(x: 580, y: 100))
-        engineCannon.addLine(to: CGPoint(x: 580, y: 120))
-        engineCannon.addLine(to: CGPoint(x: 340, y: 120))
+        engineCannon.move(to: CGPoint(x: 340 + xMove, y: 100))
+        engineCannon.addLine(to: CGPoint(x: 580 + xMove, y: 100))
+        engineCannon.addLine(to: CGPoint(x: 580 + xMove, y: 120))
+        engineCannon.addLine(to: CGPoint(x: 340 + xMove, y: 120))
         engineCannon.close()
         engineCannon.stroke()
         engineCannon.fill()
+    }
+    func drawLight() {
+        #colorLiteral(red: 0.9760972799, green: 1, blue: 0, alpha: 1).setFill()
+        let light = UIBezierPath()
+        light.move(to: CGPoint(x: 550 + xMove, y: 185))
+        light.addLine(to: CGPoint(x: 550 + xMove, y: 175))
+        light.addLine(to: CGPoint(x: 590 + xMove, y: 175))
+        light.addLine(to: CGPoint(x: 590 + xMove, y: 185))
+        light.close()
+        light.stroke()
+        light.fill()
     }
 }
 

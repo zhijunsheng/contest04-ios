@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,15 +23,36 @@
                                     <constraint firstAttribute="width" secondItem="3oj-Qf-1Ae" secondAttribute="height" multiplier="1:1" id="eAe-Y0-hP3"/>
                                 </constraints>
                             </view>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-100" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="yn4-NI-NoB">
+                                <rect key="frame" x="18" y="756" width="732" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="tankMoveSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="5gl-ug-0qR"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fB-jc-Wwf">
+                                <rect key="frame" x="20" y="801" width="728" height="203"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="160"/>
+                                <state key="normal" title="💥"/>
+                                <connections>
+                                    <action selector="boom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nAt-Um-JlW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3oj-Qf-1Ae" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7fC-fZ-qcj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3oj-Qf-1Ae" secondAttribute="trailing" constant="20" id="Fhs-U0-j6H"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0fB-jc-Wwf" secondAttribute="bottom" constant="20" id="V14-8T-C6r"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0fB-jc-Wwf" secondAttribute="trailing" constant="20" id="evO-Se-HYs"/>
                             <constraint firstItem="3oj-Qf-1Ae" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="q8n-hQ-2VN"/>
+                            <constraint firstItem="0fB-jc-Wwf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rIM-kQ-SNC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tankView" destination="3oj-Qf-1Ae" id="d39-lT-6Mi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
