@@ -9,7 +9,8 @@ class TankView: UIView {
         drawTrack()
         drawBody()
         drawCannon()
-        drawSector()
+        drawSectors()
+        
     }
     
     func drawWheel() {
@@ -20,123 +21,36 @@ class TankView: UIView {
         }
     }
     
-    func drawSector() {
-        let pen = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 0 + deltaX, y: 500), radius: 30, startAngle: 1.5 * CGFloat.pi + deltaX / 30, endAngle: 2 * CGFloat.pi + deltaX / 30, clockwise: true)
-        pen.addLine(to: CGPoint(x: 170 + 70 * 0 + deltaX, y: 500))
+    func drawSector(wheelIndex: Int, startAngle: CGFloat, endAngle: CGFloat, fillColor: UIColor, strokeColor: UIColor) {
+        let pen = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * CGFloat(wheelIndex) + deltaX, y: 500), radius: 30, startAngle: startAngle * CGFloat.pi + deltaX / 30, endAngle: endAngle * CGFloat.pi + deltaX / 30, clockwise: true)
+        pen.addLine(to: CGPoint(x: 170 + 70 * CGFloat(wheelIndex) + deltaX, y: 500))
         pen.close()
         
-        #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1).setFill()
+        fillColor.setFill()
         pen.fill()
-        #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1).setStroke()
+        strokeColor.setStroke()
         pen.stroke()
+    }
+ 
+    func drawSectors() {
+        drawSector(wheelIndex: 0, startAngle: 1.5, endAngle: 2, fillColor: #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1), strokeColor: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1))
+        drawSector(wheelIndex: 0, startAngle: 0.5, endAngle: 1, fillColor: #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1), strokeColor: #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1))
+        drawSector(wheelIndex: 0, startAngle: 0, endAngle: 0.5, fillColor: #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1), strokeColor: #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1))
+        drawSector(wheelIndex: 0, startAngle: 1, endAngle: 1.5, fillColor: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1), strokeColor: #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1))
         
-        let pen1 = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 0 + deltaX, y: 500), radius: 30, startAngle: 0.5 * CGFloat.pi + deltaX / 30, endAngle: 1 * CGFloat.pi + deltaX / 30, clockwise: true)
-        pen1.addLine(to: CGPoint(x: 170 + 70 * 0 + deltaX, y: 500))
-        pen1.close()
+        drawSector(wheelIndex: 1, startAngle: 1, endAngle: 1.5, fillColor: #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1), strokeColor: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1))
+        drawSector(wheelIndex: 1, startAngle: 1.5, endAngle: 2, fillColor: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), strokeColor: #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1))
+        drawSector(wheelIndex: 1, startAngle: 0, endAngle: 0.5, fillColor: #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1), strokeColor: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1))
+        drawSector(wheelIndex: 1, startAngle: 0.5, endAngle: 1, fillColor: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1), strokeColor: #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1))
         
-        #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1).setFill()
-        pen1.fill()
-        #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1).setStroke()
-        pen1.stroke()
+        drawSector(wheelIndex: 2, startAngle: 1, endAngle: 1.5, fillColor: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1), strokeColor: #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1))
+        drawSector(wheelIndex: 2, startAngle: 1.5, endAngle: 2, fillColor: #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1), strokeColor: #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1))
+        drawSector(wheelIndex: 2, startAngle: 0, endAngle: 0.5, fillColor: #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1), strokeColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
+        drawSector(wheelIndex: 2, startAngle: 0.5, endAngle: 1, fillColor: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), strokeColor: #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1))
         
-        let pen2 = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 0 + deltaX, y: 500), radius: 30, startAngle: 0 * CGFloat.pi + deltaX / 30, endAngle: 0.5 * CGFloat.pi + deltaX / 30, clockwise: true)
-        pen2.addLine(to: CGPoint(x: 170 + 70 * 0 + deltaX, y: 500))
-        pen2.close()
+        drawSector(wheelIndex: 3, startAngle: 1, endAngle: 1.5, fillColor: #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1), strokeColor: #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1))
         
-        #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1).setFill()
-        pen2.fill()
-        #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1).setStroke()
-        pen2.stroke()
         
-        let pen3 = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 0 + deltaX, y: 500), radius: 30, startAngle: 1 * CGFloat.pi + deltaX / 30, endAngle: 1.5 * CGFloat.pi + deltaX / 30, clockwise: true)
-        pen3.addLine(to: CGPoint(x: 170 + 70 * 0 + deltaX, y: 500))
-        pen3.close()
-        
-        #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1).setFill()
-        pen3.fill()
-        #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1).setStroke()
-        pen3.stroke()
-        
-        let pen4 = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 1 + deltaX, y: 500), radius: 30, startAngle: 1 * CGFloat.pi + deltaX / 30, endAngle: 1.5 * CGFloat.pi + deltaX / 30, clockwise: true)
-        pen4.addLine(to: CGPoint(x: 170 + 70 * 1 + deltaX, y: 500))
-        pen4.close()
-        
-        #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1).setFill()
-        pen4.fill()
-        #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1).setStroke()
-        pen4.stroke()
-        
-        let pen5 = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 1 + deltaX, y: 500), radius: 30, startAngle: 1.5 * CGFloat.pi + deltaX / 30, endAngle: 2 * CGFloat.pi + deltaX / 30, clockwise: true)
-        pen5.addLine(to: CGPoint(x: 170 + 70 * 1 + deltaX, y: 500))
-        pen5.close()
-        
-        #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1).setFill()
-        pen5.fill()
-        #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1).setStroke()
-        pen5.stroke()
-        
-        let pen6 = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 1 + deltaX, y: 500), radius: 30, startAngle: 0 * CGFloat.pi + deltaX / 30, endAngle: 0.5 * CGFloat.pi + deltaX / 30, clockwise: true)
-        pen6.addLine(to: CGPoint(x: 170 + 70 * 1 + deltaX, y: 500))
-        pen6.close()
-        
-        #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1).setFill()
-        pen6.fill()
-        #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).setStroke()
-        pen6.stroke()
-        
-        let pen7 = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 1 + deltaX, y: 500), radius: 30, startAngle: 0.5 * CGFloat.pi + deltaX / 30, endAngle: 1 * CGFloat.pi + deltaX / 30, clockwise: true)
-        pen7.addLine(to: CGPoint(x: 170 + 70 * 1 + deltaX, y: 500))
-        pen7.close()
-        
-        #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1).setFill()
-        pen7.fill()
-        #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1).setStroke()
-        pen7.stroke()
-        
-        let pen8 = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 2 + deltaX, y: 500), radius: 30, startAngle: 1 * CGFloat.pi + deltaX / 30, endAngle: 1.5 * CGFloat.pi + deltaX / 30, clockwise: true)
-        pen8.addLine(to: CGPoint(x: 170 + 70 * 2 + deltaX, y: 500))
-        pen8.close()
-        
-        #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1).setFill()
-        pen8.fill()
-        #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1).setStroke()
-        pen8.stroke()
-        
-        let pen9 = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 2 + deltaX, y: 500), radius: 30, startAngle: 1.5 * CGFloat.pi + deltaX / 30, endAngle: 2 * CGFloat.pi + deltaX / 30, clockwise: true)
-        pen9.addLine(to: CGPoint(x: 170 + 70 * 2 + deltaX, y: 500))
-        pen9.close()
-        
-        #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1).setFill()
-        pen9.fill()
-        #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1).setStroke()
-        pen9.stroke()
-        
-        let pen10 = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 2 + deltaX, y: 500), radius: 30, startAngle: 0 * CGFloat.pi + deltaX / 30, endAngle: 0.5 * CGFloat.pi + deltaX / 30, clockwise: true)
-        pen10.addLine(to: CGPoint(x: 170 + 70 * 2 + deltaX, y: 500))
-        pen10.close()
-        
-        #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1).setFill()
-        pen10.fill()
-        #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).setStroke()
-        pen10.stroke()
-        
-        let pen11 = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 2 + deltaX, y: 500), radius: 30, startAngle: 0.5 * CGFloat.pi + deltaX / 30, endAngle: 1 * CGFloat.pi + deltaX / 30, clockwise: true)
-        pen11.addLine(to: CGPoint(x: 170 + 70 * 2 + deltaX, y: 500))
-        pen11.close()
-        
-        #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1).setFill()
-        pen11.fill()
-        #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1).setStroke()
-        pen11.stroke()
-        
-        let pen12 = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 3 + deltaX, y: 500), radius: 30, startAngle: 1 * CGFloat.pi + deltaX / 30, endAngle: 1.5 * CGFloat.pi + deltaX / 30, clockwise: true)
-        pen12.addLine(to: CGPoint(x: 170 + 70 * 3 + deltaX, y: 500))
-        pen12.close()
-        
-        #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1).setFill()
-        pen12.fill()
-        #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1).setStroke()
-        pen12.stroke()
         
         let pen13 = UIBezierPath(arcCenter: CGPoint(x: 170 + 70 * 3 + deltaX, y: 500), radius: 30, startAngle: 1.5 * CGFloat.pi + deltaX / 30, endAngle: 2 * CGFloat.pi + deltaX / 30, clockwise: true)
         pen13.addLine(to: CGPoint(x: 170 + 70 * 3 + deltaX, y: 500))
