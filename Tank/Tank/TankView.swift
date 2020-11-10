@@ -12,6 +12,8 @@ class TankView: UIView {
     
     var tankX: CGFloat = 300
     
+    let percentage: CGFloat = 1.5
+    
     override func draw(_ rect: CGRect) {
         drawBody()
         drawCannon()
@@ -23,55 +25,47 @@ class TankView: UIView {
         if tankX < -500 {
             tankX = 1000
         }
-        
-        
-        let percentage: CGFloat = 1
-
-        
-        UIBezierPath(arcCenter: CGPoint(x: 200, y: 600), radius: 10, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true).fill()
-        
-        UIBezierPath(rect: CGRect(x: 200 - 50 * percentage, y: 600 - 50 *  percentage, width: 200 * percentage, height: 100 * percentage)).stroke()
     }
     
     func drawBody() {
         let path = UIBezierPath()
-        path.move(to: CGPoint(x: tankX - 200, y: 350))
-        path.addLine(to: CGPoint(x: tankX - 150, y: 300))
-        path.addLine(to: CGPoint(x: tankX - 100, y: 250))
-        path.addLine(to: CGPoint(x: tankX + 300, y: 250))
-        path.addLine(to: CGPoint(x: tankX + 300, y: 300))
-        path.addLine(to: CGPoint(x: tankX + 250, y: 350))
+        path.move(to: CGPoint(x: (tankX - 200) * percentage, y: 350 * percentage))
+        path.addLine(to: CGPoint(x: (tankX - 150) * percentage, y: 300 * percentage))
+        path.addLine(to: CGPoint(x: (tankX - 100) * percentage, y: 250 * percentage))
+        path.addLine(to: CGPoint(x: (tankX + 300) * percentage, y: 250 * percentage))
+        path.addLine(to: CGPoint(x: (tankX + 300) * percentage, y: 300 * percentage))
+        path.addLine(to: CGPoint(x: (tankX + 250) * percentage, y: 350 * percentage))
         path.close()
         path.stroke()
     }
     
     func drawCannon() {
         let path = UIBezierPath()
-        path.move(to: CGPoint(x: tankX, y: 250))
-        path.addLine(to: CGPoint(x: tankX + 50, y: 200))
-        path.addLine(to: CGPoint(x: tankX + 200, y: 200))
-        path.addLine(to: CGPoint(x: tankX + 200, y: 225))
-        path.addLine(to: CGPoint(x: tankX + 175, y: 250))
+        path.move(to: CGPoint(x: tankX * percentage, y: 250 * percentage))
+        path.addLine(to: CGPoint(x: (tankX + 50) * percentage, y: 200 * percentage))
+        path.addLine(to: CGPoint(x: (tankX + 200) * percentage, y: 200 * percentage))
+        path.addLine(to: CGPoint(x: (tankX + 200) * percentage, y: 225 * percentage))
+        path.addLine(to: CGPoint(x: (tankX + 175) * percentage, y: 250 * percentage))
         path.stroke()
         
         let cannonCover = UIBezierPath()
         #colorLiteral(red: 0.3098039329, green: 0.2039215714, blue: 0.03921568766, alpha: 1).setFill()
-        cannonCover.move(to: CGPoint(x: tankX + 50, y: 250))
-        cannonCover.addLine(to: CGPoint(x: tankX + 100, y: 200))
-        cannonCover.addLine(to: CGPoint(x: tankX, y: 200))
-        cannonCover.addLine(to: CGPoint(x: tankX - 50, y: 250))
+        cannonCover.move(to: CGPoint(x: (tankX + 50) * percentage, y: 250 * percentage))
+        cannonCover.addLine(to: CGPoint(x: (tankX + 100) * percentage, y: 200 * percentage))
+        cannonCover.addLine(to: CGPoint(x: tankX * percentage, y: 200 * percentage))
+        cannonCover.addLine(to: CGPoint(x: (tankX - 50) * percentage, y: 250 * percentage))
         cannonCover.close()
         cannonCover.fill()
         
         let cannon = UIBezierPath()
         #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).setFill()
-        cannon.move(to: CGPoint(x: tankX - 25, y: 225))
-        cannon.addLine(to: CGPoint(x: tankX - 200, y: 225))
-        cannon.addLine(to: CGPoint(x: tankX - 200, y: 235))
-        cannon.addLine(to: CGPoint(x: tankX - 35, y: 235))
+        cannon.move(to: CGPoint(x: (tankX - 25) * percentage, y: 225 * percentage))
+        cannon.addLine(to: CGPoint(x: (tankX - 200) * percentage, y: 225 * percentage))
+        cannon.addLine(to: CGPoint(x: (tankX - 200) * percentage, y: 235 * percentage))
+        cannon.addLine(to: CGPoint(x: (tankX - 35) * percentage, y: 235 * percentage))
         cannon.stroke()
-        UIBezierPath(rect: CGRect(x: tankX - 150, y: 222.5, width: 50, height: 15)).fill()
-        UIBezierPath(rect: CGRect(x: tankX - 250, y: 225, width: 50, height: 10)).fill()
+        UIBezierPath(rect: CGRect(x: (tankX - 150) * percentage, y: 222.5 * percentage, width: 50 * percentage, height: 15 * percentage)).fill()
+        UIBezierPath(rect: CGRect(x: (tankX - 250) * percentage, y: 225 * percentage, width: 50 * percentage, height: 10 * percentage)).fill()
     }
     
     func drawWheelDesign(x: CGFloat, y: CGFloat, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, color: UIColor) {
@@ -82,7 +76,7 @@ class TankView: UIView {
     
     func drawWheel(x: CGFloat, y: CGFloat, radius: CGFloat) {
         let wheel = UIBezierPath(arcCenter: CGPoint(x: x, y: y), radius: radius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-        wheel.lineWidth = 5
+        wheel.lineWidth = 5 * percentage
         wheel.stroke()
         
         drawWheelDesign(x: x, y: y, radius: radius, startAngle: tankX/radius, endAngle: tankX/radius + 0.25 * CGFloat.pi, color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
@@ -98,17 +92,17 @@ class TankView: UIView {
     func drawWheels() {
         #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).setFill()
         for i in 0 ..< 6 {
-            drawWheel(x: tankX - 150 + CGFloat(i) * 75, y: 375, radius: 30)
+            drawWheel(x: (tankX - 150 + CGFloat(i) * 75) * percentage, y: 375 * percentage, radius: 30 * percentage)
         }
     }
     
     func drawWheelCover() {
         let path = UIBezierPath()
         #colorLiteral(red: 0.09545009583, green: 0.2720899582, blue: 0.02509538643, alpha: 1).setFill()
-        path.move(to: CGPoint(x: tankX - 150, y: 300))
-        path.addLine(to: CGPoint(x: tankX + 300, y: 300))
-        path.addLine(to: CGPoint(x: tankX + 225, y: 375))
-        path.addLine(to: CGPoint(x: tankX - 150, y: 375))
+        path.move(to: CGPoint(x: (tankX - 150) * percentage, y: 300 * percentage))
+        path.addLine(to: CGPoint(x: (tankX + 300) * percentage, y: 300 * percentage))
+        path.addLine(to: CGPoint(x: (tankX + 225) * percentage, y: 375 * percentage))
+        path.addLine(to: CGPoint(x: (tankX - 150) * percentage, y: 375 * percentage))
         path.close()
         path.fill()
     }
@@ -117,25 +111,25 @@ class TankView: UIView {
         #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).setFill()
         
         let path = UIBezierPath()
-        path.move(to: CGPoint(x: tankX + 150, y: 200))
-        path.addLine(to: CGPoint(x: tankX + 150, y: 50))
+        path.move(to: CGPoint(x: (tankX + 150) * percentage, y: 200 * percentage))
+        path.addLine(to: CGPoint(x: (tankX + 150) * percentage, y: 50 * percentage))
         path.stroke()
         
-        UIBezierPath(rect: CGRect(x: tankX + 50, y: 170, width: 10, height: 30)).fill()
-        UIBezierPath(rect: CGRect(x: tankX + 70, y: 170, width: 10, height: 30)).fill()
-        UIBezierPath(rect: CGRect(x: tankX + 10, y: 155, width: 75, height: 20)).fill()
-        UIBezierPath(rect: CGRect(x: tankX - 65, y: 160, width: 75, height: 10)).fill()
+        UIBezierPath(rect: CGRect(x: (tankX + 50) * percentage, y: 170 * percentage, width: 10 * percentage, height: 30 * percentage)).fill()
+        UIBezierPath(rect: CGRect(x: (tankX + 70) * percentage, y: 170 * percentage, width: 10 * percentage, height: 30 * percentage)).fill()
+        UIBezierPath(rect: CGRect(x: (tankX + 10) * percentage, y: 155 * percentage, width: 75 * percentage, height: 20 * percentage)).fill()
+        UIBezierPath(rect: CGRect(x: (tankX - 65) * percentage, y: 160 * percentage, width: 75 * percentage, height: 10 * percentage)).fill()
     }
     
     func drawTrack() {
         let track = UIBezierPath()
-        track.lineWidth = 5
-        track.move(to: CGPoint(x: tankX - 200, y: 350))
-        track.addLine(to: CGPoint(x: tankX - 175, y: 390))
-        track.move(to: CGPoint(x: tankX - 150, y: 405))
-        track.addLine(to: CGPoint(x: tankX + 225, y: 405))
-        track.move(to: CGPoint(x: tankX + 255, y: 375))
-        track.addLine(to: CGPoint(x: tankX + 255, y: 345))
+        track.lineWidth = 5 * percentage
+        track.move(to: CGPoint(x: (tankX - 200) * percentage, y: 350 * percentage))
+        track.addLine(to: CGPoint(x: (tankX - 175) * percentage, y: 390 * percentage))
+        track.move(to: CGPoint(x: (tankX - 150) * percentage, y: 405 * percentage))
+        track.addLine(to: CGPoint(x: (tankX + 225) * percentage, y: 405 * percentage))
+        track.move(to: CGPoint(x: (tankX + 255) * percentage, y: 375 * percentage))
+        track.addLine(to: CGPoint(x: (tankX + 255) * percentage, y: 345 * percentage))
         track.stroke()
     }
     
