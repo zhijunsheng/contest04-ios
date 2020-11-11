@@ -15,7 +15,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (timer) in
+            print("\(self.boardView.deltaX)")
+            
+            self.boardView.deltaX = self.boardView.deltaX - 1
+            
+            self.boardView.setNeedsDisplay()
+        }
     }
 
     @IBAction func move(_ sender: UISlider) {
