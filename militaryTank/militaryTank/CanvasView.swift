@@ -37,6 +37,25 @@ class CanvasView: UIView {
      radians ~ degrees
      
      */
+    func drawOneWheel(distance: CGFloat) {
+        let arc4 = UIBezierPath(arcCenter: CGPoint(x: 100 + distance + deltaX, y: 600), radius: 5, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        arc4.stroke()
+        
+        for i in 0..<5 {
+            let arc6 = UIBezierPath(
+                arcCenter: CGPoint(x: 100 + distance + deltaX , y: 600),
+                radius: 35,
+                startAngle: 0 * CGFloat.pi + 0.4 * CGFloat.pi * CGFloat(i) + deltaX / 30,
+                endAngle: 0.4 * CGFloat.pi + 0.4 * CGFloat.pi * CGFloat(i) + deltaX / 30,
+                clockwise: true)
+            arc6.addLine(to: CGPoint(x: 100 + distance + deltaX, y: 600))
+            arc6.close()
+            #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).setStroke()
+            arc6.stroke()
+        }
+        let arc5 = UIBezierPath(arcCenter: CGPoint(x: 100 + distance + deltaX, y: 600), radius: 35, startAngle: 0 + deltaX / 30, endAngle: 2 * CGFloat.pi + deltaX / 30, clockwise: true)
+        arc5.stroke()
+    }
     
     func drawWheelAndBottomPart() {
         
@@ -45,42 +64,13 @@ class CanvasView: UIView {
         connectorStroke.addLine(to: CGPoint(x: 400 + deltaX, y: 630))
         connectorStroke.stroke()
         
- 
-
-        let arc2 = UIBezierPath(arcCenter: CGPoint(x: 100 + deltaX, y: 600), radius: 5, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-        arc2.stroke()
-        
-        for i in 0..<5 {
-            let arc3 = UIBezierPath(
-                arcCenter: CGPoint(x: 100 + deltaX , y: 600),
-                radius: 35,
-                startAngle: 0 * CGFloat.pi + 0.4 * CGFloat.pi * CGFloat(i) + deltaX / 30,
-                endAngle: 0.4 * CGFloat.pi + 0.4 * CGFloat.pi * CGFloat(i) + deltaX / 30,
-                clockwise: true)
-            arc3.addLine(to: CGPoint(x: 100 + deltaX, y: 600))
-            arc3.close()
-            #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).setStroke()
-            arc3.stroke()
-        
-//        let arc4 = UIBezierPath(
-//            arcCenter: CGPoint(x: 100 + deltaX , y: 600),
-//            radius: 35,
-//            startAngle: 0 + deltaX / 30,
-//            endAngle: 0.4 * CGFloat.pi + deltaX / 30,
-//            clockwise: true)
-//        arc4.addLine(to: CGPoint(x: 100 + deltaX, y: 600))
-//        arc4.close()
-//        #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).setStroke()
-//        arc4.stroke()
-        }
-        let arc = UIBezierPath(arcCenter: CGPoint(x: 100 + deltaX, y: 600), radius: 35, startAngle: 0 + deltaX / 30, endAngle: 2 * CGFloat.pi + deltaX / 30, clockwise: true)
-        arc.stroke()
-
-//        for i in 0..<7 {
-//            let wheel = UIBezierPath(arcCenter: CGPoint(x: 100 + deltaX + 50 * CGFloat(i) , y: 615), radius: 15, startAngle: 0 * CGFloat.pi + deltaX / 30, endAngle: 1.95 * CGFloat.pi + deltaX / 30, clockwise: true)
-//            wheel.stroke()
-//        }
+        drawOneWheel(distance: 0)
+        drawOneWheel(distance: 100)
+        drawOneWheel(distance: 200)
+        drawOneWheel(distance: 300)
     }
+    
+    
     
     func drawTank() {
         #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1).setFill()
