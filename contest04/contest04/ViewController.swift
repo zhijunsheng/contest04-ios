@@ -2,7 +2,8 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var tankView: TankView!
-    var timer: Timer?
+    var timer1: Timer?
+    var timer2: Timer?
  //   var bomb: UIImage
     
     
@@ -13,8 +14,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func boom(_ sender: UIButton) {
-        Timer.scheduledTimer(withTimeInterval: 1/30, repeats: true) { (t) in
-            self.tankView.dtabltX += 5/3
+        timer2?.invalidate()
+        timer2 = nil
+        timer2 = Timer.scheduledTimer(withTimeInterval: 1/30, repeats: true) { (t) in
+            self.tankView.dtabltX += 80/3
             self.tankView.setNeedsDisplay()
             if self.tankView.dtabltX >= 625 {
                 self.tankView.dtabltX = 10
@@ -24,22 +27,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func stop(_ sender: UIButton) {
-        timer?.invalidate()
-        timer = nil
+        timer1?.invalidate()
+        timer1 = nil
     }
     
     @IBAction func go(_ sender: UIButton) {
-        timer?.invalidate()
-        timer = nil
-        timer = Timer.scheduledTimer(withTimeInterval: 1/30, repeats: true) { (_) in
+        timer1?.invalidate()
+        timer1 = nil
+        timer1 = Timer.scheduledTimer(withTimeInterval: 1/30, repeats: true) { (_) in
             self.tankView.dtatnkX += 1
             self.tankView.setNeedsDisplay()
         }
     }
     
     @IBAction func move(_ sender: UISlider) {
-        timer?.invalidate()
-        timer = nil
+        timer1?.invalidate()
+        timer1 = nil
         tankView.dtatnkX = CGFloat(sender.value) - 200
         tankView.setNeedsDisplay()
     }
