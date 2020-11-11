@@ -10,7 +10,7 @@ import UIKit
 
 class BoardView: UIView {
     
-    var centreXDelta: CGFloat = 0
+    var centreXDelta: CGFloat = -200
     
     override func draw(_ rect: CGRect) {
         drawWheel()
