@@ -13,9 +13,9 @@ class BoardView: UIView {
     var centreXDelta: CGFloat = -200
     
     override func draw(_ rect: CGRect) {
+        drawTrack()
         drawWheel()
         drawGun()
-        drawTrack()
         drawBody()
     }
     
@@ -29,8 +29,14 @@ class BoardView: UIView {
         bottomTrack.move(to: CGPoint(x: 150 + centreXDelta, y: 430 + 30))
         bottomTrack.addLine(to: CGPoint(x: 450 + centreXDelta, y: 430 + 30))
         bottomTrack.stroke()
+        
+        let fillIn = UIBezierPath(rect: CGRect(x: 150 + centreXDelta, y: 400, width: 150 * 2, height: 30 * 2))
+        #colorLiteral(red: 0.2006855607, green: 0.2007260025, blue: 0.2006802261, alpha: 1).setFill()
+        fillIn.fill()
+        
     }
-    
+    // shouldi i call your
+    // yes call my number
     func drawBody() {
         let body = UIBezierPath(rect: CGRect(x: 170 + centreXDelta, y: 320, width: 250, height: 80))
         #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1).setFill()
