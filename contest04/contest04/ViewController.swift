@@ -9,6 +9,11 @@ class ViewController: UIViewController {
         
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (t) in
             self.tankView.deltaX = self.tankView.deltaX - 5
+            print("\(self.tankView.deltaX)")
+            
+            if self.tankView.deltaX == -650 {
+                self.tankView.deltaX = 650
+            }
             
             self.tankView.setNeedsDisplay()
         }
