@@ -6,10 +6,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (t) in
+            self.tankView.deltaX = self.tankView.deltaX - 5
+            
+            self.tankView.setNeedsDisplay()
+        }
     }
     
     @IBAction func slide(_ sender: UISlider) {
-        print("\(sender.value)")
         tankView.deltaX = CGFloat(sender.value)
         
         tankView.setNeedsDisplay()
