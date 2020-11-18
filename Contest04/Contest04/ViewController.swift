@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         
         Timer.scheduledTimer(withTimeInterval: 0.01, repeats:true) { (_) in
             print(self.canvasView.move)
-            if self.canvasView.move == 1200 {
+            if self.canvasView.move >= 1200 {
                 self.canvasView.move = -1000
             }
             self.canvasView.move += 1
