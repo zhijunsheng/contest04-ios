@@ -90,7 +90,7 @@ class CanvasView: UIView {
         let arm = UIBezierPath(arcCenter: CGPoint(x: 420 + deltaX, y: 430), radius: 30, startAngle: -0.5 * CGFloat.pi, endAngle: 0.5 * CGFloat.pi, clockwise: true)
         arm.fill()
         arm.stroke()
-        
+        #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1).setFill()
         let bottomOfTank = UIBezierPath(rect: CGRect(x: 100 + deltaX  , y: 465, width: 300, height: 100))
         bottomOfTank.fill()
         bottomOfTank.stroke()
