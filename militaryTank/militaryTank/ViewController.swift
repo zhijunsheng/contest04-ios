@@ -22,5 +22,8 @@ class ViewController: UIViewController {
         canvasView.setNeedsDisplay()
         
     }
+    @IBAction func shooting(_ sender: UIButton) {
+        
+    }
 }
 

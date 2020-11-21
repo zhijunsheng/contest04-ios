@@ -14,20 +14,7 @@ class CanvasView: UIView {
     override func draw(_ rect: CGRect) {
         drawTank()
         drawWheelAndBottomPart()
-        
-//        let arc = UIBezierPath(arcCenter: CGPoint(x: 100, y: 100), radius: 55, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-//        arc.stroke()
-//
-//        let arc2 = UIBezierPath(arcCenter: CGPoint(x: 100, y: 100), radius: 25, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-//        arc2.stroke()
-//
-//        for i in 0..<6 {
-//            let arc3 = UIBezierPath(arcCenter: CGPoint(x: 100, y: 100), radius: 55, startAngle: 0 + CGFloat (i) + 1.5 * CGFloat.pi, endAngle: 0.4  + CGFloat (i) + 1.5 * CGFloat.pi, clockwise: true)
-//            arc3.addLine(to: CGPoint(x: 100, y: 100))
-//            arc3.close()
-//            #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).setStroke()
-//            arc3.stroke()
-//        }
+
     }
     
     /*
@@ -60,8 +47,8 @@ class CanvasView: UIView {
     func drawWheelAndBottomPart() {
         
         let connectorStroke = UIBezierPath()
-        connectorStroke.move(to: CGPoint(x: 100 + deltaX, y: 630))
-        connectorStroke.addLine(to: CGPoint(x: 400 + deltaX, y: 630))
+        connectorStroke.move(to: CGPoint(x: 100 + deltaX, y: 636))
+        connectorStroke.addLine(to: CGPoint(x: 400 + deltaX, y: 636))
         connectorStroke.stroke()
         
         drawOneWheel(distance: 0)
@@ -74,19 +61,41 @@ class CanvasView: UIView {
     
     func drawTank() {
         #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1).setFill()
-        
-        let tankGunTip = UIBezierPath(rect: CGRect(x: 650 + deltaX  , y: 290, width: 50, height: 70))
+        let tipOfTank = UIBezierPath(rect: CGRect(x: 200 + deltaX  , y: 355, width: 100, height: 40))
+        tipOfTank.fill()
+        tipOfTank.stroke()
+    
+        let tankGunTip = UIBezierPath(rect: CGRect(x: 540 + deltaX  , y: 250, width: 60, height: 50))
         tankGunTip.fill()
         tankGunTip.stroke()
         
-        let tankGun = UIBezierPath(rect: CGRect(x: 450 + deltaX  , y: 310, width: 200, height: 30))
+//        let tankGun = UIBezierPath(rect: CGRect(x: 450 + deltaX  , y: 310, width: 200, height: 30))
+//        tankGun.fill()
+//        tankGun.stroke()
+        
+        let tankGun = UIBezierPath()
+        tankGun.move(to: CGPoint(x: 440 + deltaX, y: 410))
+        tankGun.addLine(to: CGPoint(x: 540 + deltaX, y: 300))
+        tankGun.addLine(to: CGPoint(x: 600 + deltaX, y: 300))
+        tankGun.addLine(to: CGPoint(x: 455 + deltaX, y: 448))
+        tankGun.close()
         tankGun.fill()
         tankGun.stroke()
-        let bottomOfTank = UIBezierPath(rect: CGRect(x: 100 + deltaX  , y: 400, width: 300, height: 200))
+        
+        let miniArm = UIBezierPath(arcCenter: CGPoint(x: 445 + deltaX, y: 430), radius: 20, startAngle: -0.5 * CGFloat.pi, endAngle: 0.5 * CGFloat.pi, clockwise: true)
+        #colorLiteral(red: 0.3548746705, green: 0.7854425311, blue: 0.9815476537, alpha: 1).setFill()
+        miniArm.fill()
+        miniArm.stroke()
+        
+        let arm = UIBezierPath(arcCenter: CGPoint(x: 420 + deltaX, y: 430), radius: 30, startAngle: -0.5 * CGFloat.pi, endAngle: 0.5 * CGFloat.pi, clockwise: true)
+        arm.fill()
+        arm.stroke()
+        
+        let bottomOfTank = UIBezierPath(rect: CGRect(x: 100 + deltaX  , y: 465, width: 300, height: 100))
         bottomOfTank.fill()
         bottomOfTank.stroke()
         
-        let topOfTank = UIBezierPath(rect: CGRect(x: 150 + deltaX, y: 250, width: 300, height: 150))
+        let topOfTank = UIBezierPath(rect: CGRect(x: 120 + deltaX, y: 395, width: 300, height: 70))
         topOfTank.fill()
         topOfTank.stroke()
         
