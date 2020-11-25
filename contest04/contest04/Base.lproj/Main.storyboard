@@ -38,6 +38,10 @@
                                     <action selector="boom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nAt-Um-JlW"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ground" translatesAutoresizingMaskIntoConstraints="NO" id="m5w-un-zau">
+                                <rect key="frame" x="264" y="140" width="240" height="744"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -60,6 +64,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ground" width="834" height="392"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
