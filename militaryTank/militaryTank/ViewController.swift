@@ -16,18 +16,22 @@ class ViewController: UIViewController {
         Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (clock) in
             self.canvasView.deltaX += 1
             self.canvasView.setNeedsDisplay()
-            
+            if self.canvasView.deltaX >= 670 {
+                self.canvasView.deltaX = -370
+            }
         }
+        
     }
-    
-    @IBAction func slide(_ sender: UISlider) {
-        print(sender.value)
-        canvasView.deltaX = CGFloat(sender.value)
-        canvasView.setNeedsDisplay()
-    }
-    
-    @IBAction func shooting(_ sender: UIButton) {
-        print("idk")
-    }
-    
+
+
+@IBAction func slide(_ sender: UISlider) {
+    print(sender.value)
+    canvasView.deltaX = CGFloat(sender.value)
+    canvasView.setNeedsDisplay()
+}
+
+@IBAction func shooting(_ sender: UIButton) {
+    print("idk")
+}
+
 }
