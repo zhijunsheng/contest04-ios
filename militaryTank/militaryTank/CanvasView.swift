@@ -15,6 +15,9 @@ class CanvasView: UIView {
         drawTank()
         drawWheelAndBottomPart()
 
+        let bullet = UIImage(named: "Bullet")
+        bullet?.draw(in: CGRect(x: 570 + deltaX, y: 150, width: 90, height: 50))
+        
     }
     
     /*
