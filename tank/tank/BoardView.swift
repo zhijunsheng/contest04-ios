@@ -18,6 +18,26 @@ class BoardView: UIView {
         driverCabinet()
         cannon()
         track()
+        drawSectors()
+    }
+    
+    func drawSectors() {
+        
+        for i in 0 ..< 6 {
+            let sector = UIBezierPath(arcCenter: CGPoint(x: 195 + CGFloat(i) * 2 * wheelsRadius + delta, y: 500), radius: wheelsRadius, startAngle: 1.75 * CGFloat.pi + delta / wheelsRadius, endAngle: (0.25 + 0 * 0.5) * CGFloat.pi + delta / wheelsRadius, clockwise: true)
+            sector.addLine(to: CGPoint(x: 195 + CGFloat(i * 2 * Int(wheelsRadius)) + delta, y: 500))
+            sector.close()
+            #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1).setFill()
+            sector.fill()
+            sector.stroke()
+            
+            let sector2 = UIBezierPath(arcCenter: CGPoint(x: 195 + CGFloat(i) * 2 * wheelsRadius + delta, y: 500), radius: wheelsRadius, startAngle: 0.75 * CGFloat.pi + delta / wheelsRadius, endAngle: 1.25 * CGFloat.pi + delta / wheelsRadius, clockwise: true)
+            sector2.addLine(to: CGPoint(x: 195 + CGFloat(i * 2 * Int(wheelsRadius)) + delta, y: 500))
+            sector2.close()
+            #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1).setFill()
+            sector2.fill()
+            sector2.stroke()
+        }
     }
     
     func wheels() {
