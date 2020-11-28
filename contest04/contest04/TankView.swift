@@ -6,8 +6,9 @@ class TankView: UIView {
     var boomMove: CGFloat = 0
     
     override func draw(_ rect: CGRect) {
-        let image = UIImage(named: "bullet")
-        image?.draw(in: CGRect(x: 340 + boomMove + xMove, y: 85, width: 100, height: 50))
+        
+        let image2 = UIImage(named: "bullet")
+        image2?.draw(in: CGRect(x: 340 + boomMove + xMove, y: 85, width: 100, height: 50))
         drawShapeSix()
         drawWheels()
         drawlines()
