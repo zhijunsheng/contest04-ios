@@ -1,7 +1,7 @@
 import UIKit
 class TankView: UIView {
     
-    var piLenth: CGFloat = 0
+    var piLength: CGFloat = 0
     var xMove: CGFloat = 0
     var boomMove: CGFloat = 0
     
@@ -38,30 +38,30 @@ class TankView: UIView {
         wheel5.fill()
         
         #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1).setFill()
-        let l1wheel2 = UIBezierPath(arcCenter: CGPoint(x: 220 + xMove, y: 250), radius: 50, startAngle: piLenth, endAngle: CGFloat.pi / 2 + piLenth, clockwise: true)
+        let l1wheel2 = UIBezierPath(arcCenter: CGPoint(x: 220 + xMove, y: 250), radius: 50, startAngle: piLength, endAngle: CGFloat.pi / 2 + piLength, clockwise: true)
         l1wheel2.fill()
-        let l2wheel2 = UIBezierPath(arcCenter: CGPoint(x: 220 + xMove, y: 250), radius: 50, startAngle: CGFloat.pi + piLenth, endAngle: CGFloat.pi * 1.5 + piLenth, clockwise: true)
+        let l2wheel2 = UIBezierPath(arcCenter: CGPoint(x: 220 + xMove, y: 250), radius: 50, startAngle: CGFloat.pi + piLength, endAngle: CGFloat.pi * 1.5 + piLength, clockwise: true)
         l2wheel2.fill()
         
-        let l1wheel3 = UIBezierPath(arcCenter: CGPoint(x: 340 + xMove, y: 250), radius: 50, startAngle: piLenth, endAngle: CGFloat.pi / 2 + piLenth, clockwise: true)
+        let l1wheel3 = UIBezierPath(arcCenter: CGPoint(x: 340 + xMove, y: 250), radius: 50, startAngle: piLength, endAngle: CGFloat.pi / 2 + piLength, clockwise: true)
         l1wheel3.fill()
-        let l2wheel3 = UIBezierPath(arcCenter: CGPoint(x: 340 + xMove, y: 250), radius: 50, startAngle: CGFloat.pi + piLenth, endAngle: CGFloat.pi * 1.5 + piLenth, clockwise: true)
+        let l2wheel3 = UIBezierPath(arcCenter: CGPoint(x: 340 + xMove, y: 250), radius: 50, startAngle: CGFloat.pi + piLength, endAngle: CGFloat.pi * 1.5 + piLength, clockwise: true)
         l2wheel3.fill()
         
-        let l1wheel4 = UIBezierPath(arcCenter: CGPoint(x: 460 + xMove, y: 250), radius: 50, startAngle: piLenth, endAngle: CGFloat.pi / 2 + piLenth, clockwise: true)
+        let l1wheel4 = UIBezierPath(arcCenter: CGPoint(x: 460 + xMove, y: 250), radius: 50, startAngle: piLength, endAngle: CGFloat.pi / 2 + piLength, clockwise: true)
         l1wheel4.fill()
-        let l2wheel4 = UIBezierPath(arcCenter: CGPoint(x: 460 + xMove, y: 250), radius: 50, startAngle: CGFloat.pi + piLenth, endAngle: CGFloat.pi * 1.5 + piLenth, clockwise: true)
+        let l2wheel4 = UIBezierPath(arcCenter: CGPoint(x: 460 + xMove, y: 250), radius: 50, startAngle: CGFloat.pi + piLength, endAngle: CGFloat.pi * 1.5 + piLength, clockwise: true)
         l2wheel4.fill()
         
         #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1).setFill()
-        let l1wheel1 = UIBezierPath(arcCenter: CGPoint(x: 125 + xMove, y: 225), radius: 25, startAngle: piLenth * 2, endAngle: CGFloat.pi / 2 + piLenth * 2, clockwise: true)
+        let l1wheel1 = UIBezierPath(arcCenter: CGPoint(x: 125 + xMove, y: 225), radius: 25, startAngle: piLength * 2, endAngle: CGFloat.pi / 2 + piLength * 2, clockwise: true)
         l1wheel1.fill()
-        let l2wheel1 = UIBezierPath(arcCenter: CGPoint(x: 125 + xMove, y: 225), radius: 25, startAngle: CGFloat.pi + piLenth * 2, endAngle: CGFloat.pi * 1.5 + piLenth * 2, clockwise: true)
+        let l2wheel1 = UIBezierPath(arcCenter: CGPoint(x: 125 + xMove, y: 225), radius: 25, startAngle: CGFloat.pi + piLength * 2, endAngle: CGFloat.pi * 1.5 + piLength * 2, clockwise: true)
         l2wheel1.fill()
         
-        let l1wheel5 = UIBezierPath(arcCenter: CGPoint(x: 555 + xMove, y: 225), radius: 25, startAngle: piLenth * 2, endAngle: CGFloat.pi / 2 + piLenth * 2, clockwise: true)
+        let l1wheel5 = UIBezierPath(arcCenter: CGPoint(x: 555 + xMove, y: 225), radius: 25, startAngle: piLength * 2, endAngle: CGFloat.pi / 2 + piLength * 2, clockwise: true)
         l1wheel5.fill()
-        let l2wheel5 = UIBezierPath(arcCenter: CGPoint(x: 555 + xMove, y: 225), radius: 25, startAngle: CGFloat.pi + piLenth * 2, endAngle: CGFloat.pi * 1.5 + piLenth * 2, clockwise: true)
+        let l2wheel5 = UIBezierPath(arcCenter: CGPoint(x: 555 + xMove, y: 225), radius: 25, startAngle: CGFloat.pi + piLength * 2, endAngle: CGFloat.pi * 1.5 + piLength * 2, clockwise: true)
         l2wheel5.fill()
     }
     func drawlines() {
