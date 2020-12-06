@@ -20,7 +20,7 @@ class TankView: UIView {
     }
     
     func drwtnkBoard() {
-        #colorLiteral(red: 0.6666666667, green: 0.4751212597, blue: 0.2586010993, alpha: 0.5).setFill()
+        #colorLiteral(red: 0.6666666667, green: 0.4751212597, blue: 0.2586010993, alpha: 0.7490368151).setFill()
         let welMark1 = UIBezierPath()
         welMark1.addArc(withCenter: CGPoint(x: 264 * rso + dtatnkX, y: 414 * rso), radius: 50 * rso, startAngle: (dtatnkX + 200) / 50, endAngle: 0.5 * CGFloat.pi + (dtatnkX + 200) / 50, clockwise: true)
         welMark1.fill()
@@ -42,6 +42,7 @@ class TankView: UIView {
         tnkTrack.addArc(withCenter: CGPoint(x: 264 * rso + dtatnkX, y: 414 * rso), radius: 50 * rso, startAngle: 1 * CGFloat.pi, endAngle: 0.5 * CGFloat.pi, clockwise: false)
         tnkTrack.addLine(to: CGPoint(x: 464 * rso + dtatnkX, y: 464 * rso))
         tnkTrack.addArc(withCenter: CGPoint(x: 464 * rso + dtatnkX, y: 414 * rso), radius: 50 * rso, startAngle: 0.5 * CGFloat.pi, endAngle: 0, clockwise: false)
+        tnkTrack.lineWidth = 5
         tnkTrack.stroke()
         
         
@@ -62,6 +63,7 @@ class TankView: UIView {
         tnkWheel.addArc(withCenter: CGPoint(x: 339 * rso + dtatnkX, y: 439 * rso), radius: 25 * rso, startAngle: 0.5 * CGFloat.pi, endAngle: 2.5 * CGFloat.pi, clockwise: true)
         tnkWheel.addArc(withCenter: CGPoint(x: 389 * rso + dtatnkX, y: 439 * rso), radius: 25 * rso, startAngle: 0.5 * CGFloat.pi, endAngle: 2.5 * CGFloat.pi, clockwise: true)
         tnkWheel.addArc(withCenter: CGPoint(x: 464 * rso + dtatnkX, y: 414 * rso), radius: 50 * rso, startAngle: 0.5 * CGFloat.pi, endAngle: CGFloat.pi, clockwise: true)
+        tnkWheel.lineWidth = 5
         tnkWheel.stroke()
         
         let tnkMark = UIBezierPath(rect: CGRect(x: 189 * rso + dtatnkX, y: 339 * rso, width: 25 * rso, height: 50 * rso))

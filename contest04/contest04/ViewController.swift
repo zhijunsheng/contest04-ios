@@ -37,6 +37,10 @@ class ViewController: UIViewController {
         timer1 = Timer.scheduledTimer(withTimeInterval: 1/30, repeats: true) { (_) in
             self.tankView.dtatnkX += 1
             self.tankView.setNeedsDisplay()
+            if self.tankView.dtatnkX >= 528 {
+                self.tankView.dtatnkX = -200
+            }
+            
         }
     }
     

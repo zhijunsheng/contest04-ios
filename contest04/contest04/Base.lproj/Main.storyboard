@@ -15,9 +15,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tnkBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Yne-qo-Xld">
+                                <rect key="frame" x="20" y="20" width="728" height="728"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WdF-6J-gOK" customClass="TankView" customModule="contest04" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="728" height="728"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WdF-6J-gOK" secondAttribute="height" multiplier="1:1" id="RQM-0c-ZuL"/>
                                 </constraints>
@@ -90,4 +94,7 @@
             <point key="canvasLocation" x="132.8125" y="124.80468749999999"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tnkBackground" width="438" height="290"/>
+    </resources>
 </document>
