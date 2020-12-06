@@ -3,7 +3,7 @@ import UIKit
 class TankView: UIView {
     var dtatnkX: CGFloat = -200
     var dtabltX: CGFloat = 10
-    let rso: CGFloat = 0.2
+    let rso: CGFloat = 1
     
     override func draw(_ rect: CGRect) {
         // Drawing code
