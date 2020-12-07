@@ -12,9 +12,9 @@ class ViewController: UIViewController {
     @IBOutlet var tankView: TankView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (_) in
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (_) in
             if self.tankView.delta < self.tankView.bounds.width - self.tankView.offset {
-                self.tankView.delta += 1
+                self.tankView.delta += 3
             } else {
                 self.tankView.delta = 0
             }

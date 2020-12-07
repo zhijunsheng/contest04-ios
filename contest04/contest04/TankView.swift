@@ -11,6 +11,9 @@ import UIKit
 class TankView: UIView {
     var delta: CGFloat = 0
     let offset: CGFloat = -750
+    
+    var i: Int = 0
+    
     override func draw(_ rect: CGRect) {
         let ground = UIBezierPath(rect: CGRect(x: 0, y: 500, width: bounds.width, height: bounds.height - 500))
         #colorLiteral(red: 0.7125160531, green: 0.4911440497, blue: 0.2568493151, alpha: 1).setFill()
@@ -20,6 +23,17 @@ class TankView: UIView {
         cannons()
         head()
         body()
+        
+        
+        
+//        let angle = delta / 50
+//
+//        let circle = UIBezierPath(arcCenter: CGPoint(x: 100, y: 100), radius: 50, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true)
+//        circle.stroke()
+//        let cCenter = UIBezierPath(arcCenter: CGPoint(x: 100, y: 100), radius: 2, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true)
+//        cCenter.fill()
+//        let dot = UIBezierPath(arcCenter: CGPoint(x: 100 + cos(angle) * 50, y: 100 + sin(angle) * 50), radius: 2, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true)
+//        dot.fill()
     }
     
     func head() {
@@ -130,7 +144,7 @@ class TankView: UIView {
             tWheelMid.stroke()
             
             for diff in 0..<8 {
-                let tWheelDecor = UIBezierPath(arcCenter: CGPoint(x: 47.5 + 530 * CGFloat(i) + delta + offset, y: 400), radius: 25, startAngle: ((CGFloat.pi * 2 / 16) * (CGFloat(diff) * 2) + CGFloat.pi * 2 / 32) + (CGFloat(Int(delta) % 360) / 180) * CGFloat.pi, endAngle:  ((CGFloat.pi * 2 / 16) * (CGFloat(diff) * 2 + 1) + CGFloat.pi * 2 / 32) + (CGFloat(Int(delta) % 360) / 180) * CGFloat.pi, clockwise: true)
+                let tWheelDecor = UIBezierPath(arcCenter: CGPoint(x: 47.5 + 530 * CGFloat(i) + delta + offset, y: 400), radius: 25, startAngle: ((CGFloat.pi * 2 / 16) * (CGFloat(diff) * 2) + CGFloat.pi * 2 / 32) + delta / 25, endAngle:  ((CGFloat.pi * 2 / 16) * (CGFloat(diff) * 2 + 1) + CGFloat.pi * 2 / 32) + delta / 25, clockwise: true)
                 #colorLiteral(red: 0.4145729595, green: 0.4758935174, blue: 0.3643514555, alpha: 1).setFill()
                 #colorLiteral(red: 0.3014669192, green: 0.3411764801, blue: 0.2717756402, alpha: 1).setStroke()
                 tWheelDecor.lineWidth = 8
@@ -155,7 +169,7 @@ class TankView: UIView {
             bWheelMid.stroke()
             
             for diff in 0..<8 {
-                let bWheelDecor = UIBezierPath(arcCenter: CGPoint(x: 110 + 81 * CGFloat(i) + delta + offset, y: 452.5), radius: 25, startAngle: ((CGFloat.pi * 2 / 16) * (CGFloat(diff) * 2) + CGFloat.pi * 2 / 32) + (CGFloat(Int(delta) % 360) / 180) * CGFloat.pi, endAngle: ((CGFloat.pi * 2 / 16) * (CGFloat(diff) * 2 + 1) + CGFloat.pi * 2 / 32) + (CGFloat(Int(delta) % 360) / 180) * CGFloat.pi, clockwise: true)
+                let bWheelDecor = UIBezierPath(arcCenter: CGPoint(x: 110 + 81 * CGFloat(i) + delta + offset, y: 452.5), radius: 25, startAngle: ((CGFloat.pi * 2 / 16) * (CGFloat(diff) * 2) + CGFloat.pi * 2 / 32)  + delta / 25, endAngle: ((CGFloat.pi * 2 / 16) * (CGFloat(diff) * 2 + 1) + CGFloat.pi * 2 / 32) + delta / 25, clockwise: true)
                 #colorLiteral(red: 0.4145729595, green: 0.4758935174, blue: 0.3643514555, alpha: 1).setFill()
                 #colorLiteral(red: 0.3014669192, green: 0.3411764801, blue: 0.2717756402, alpha: 1).setStroke()
                 bWheelDecor.lineWidth = 8
@@ -174,5 +188,34 @@ class TankView: UIView {
         #colorLiteral(red: 0.1816306606, green: 0.1826522935, blue: 0.1284751265, alpha: 1).setStroke()
         track.lineWidth = 20
         track.stroke()
+        
+        if Int(delta + offset) % 30 == 0 {
+            i += 1
+        }
+        
+        for j in 0..<14 {
+            #colorLiteral(red: 0.2392156863, green: 0.2431372549, blue: 0.1882352941, alpha: 1).setFill()
+            UIBezierPath(rect: CGRect(x: CGFloat(j) * 30 + 100 + CGFloat(i) * 30 + offset - 6, y: 477.5, width: 12, height: 25)).fill()
+        }
+        
+//        for i in 0...0 {
+//            let trackDecor = UIBezierPath()
+//
+//            if offset + CGFloat(i * 20) + 400 * (CGFloat(Int((625 + delta + offset) / 400)) - 1) < 625 + delta + offset {
+//                trackDecor.move(to: CGPoint(x: 147.5 + offset + CGFloat(i * 20) + 400 * CGFloat(Int((625 + delta + offset) / 400)), y: 489))
+//                trackDecor.addLine(to: CGPoint(x: 147.5 + offset + CGFloat(i * 20 + 10) + 400 * CGFloat(Int((625 + delta + offset) / 400)), y: 489))
+//                #colorLiteral(red: 0.2392156863, green: 0.2431372549, blue: 0.1882352941, alpha: 1).setStroke()
+//                trackDecor.lineWidth = 22
+//                trackDecor.stroke()
+//            }
+//        }
+//        let trackDecor = UIBezierPath()
+//        trackDecor.addArc(withCenter: CGPoint(x: 47.5 + delta + offset, y: 400), radius: 37.5, startAngle: 0, endAngle: CGFloat.pi * 0.7, clockwise: false)
+//        trackDecor.addArc(withCenter: CGPoint(x: 110 + delta + offset, y: 452.5), radius: 37.5, startAngle: CGFloat.pi * 0.745, endAngle: CGFloat.pi * 0.5, clockwise: false)
+//        trackDecor.addArc(withCenter: CGPoint(x: 515 + delta + offset, y: 452.5), radius: 37.5, startAngle: CGFloat.pi * 0.5, endAngle: CGFloat.pi * 0.265, clockwise: false)
+//        trackDecor.addArc(withCenter: CGPoint(x: 577.5 + delta + offset, y: 400), radius: 37.5, startAngle: CGFloat.pi * 0.3, endAngle: CGFloat.pi, clockwise: false)
+//        #colorLiteral(red: 0.2196078431, green: 0.2235294118, blue: 0.168627451, alpha: 1).setStroke()
+//        trackDecor.lineWidth = 20
+//        trackDecor.stroke()
     }
 }

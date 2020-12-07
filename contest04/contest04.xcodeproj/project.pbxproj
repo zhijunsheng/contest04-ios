@@ -15,6 +15,7 @@
 		753B815F2534A24100AE7A1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753B815D2534A24100AE7A1C /* LaunchScreen.storyboard */; };
 		753B816A2534A24100AE7A1C /* contest04Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753B81692534A24100AE7A1C /* contest04Tests.swift */; };
 		753B81752534A39C00AE7A1C /* TankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753B81742534A39C00AE7A1C /* TankView.swift */; };
+		754298C52568CB3700CEA186 /* ComplexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754298C42568CB3700CEA186 /* ComplexTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		753B81692534A24100AE7A1C /* contest04Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contest04Tests.swift; sourceTree = "<group>"; };
 		753B816B2534A24100AE7A1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		753B81742534A39C00AE7A1C /* TankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankView.swift; sourceTree = "<group>"; };
+		754298C42568CB3700CEA186 /* ComplexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				753B81692534A24100AE7A1C /* contest04Tests.swift */,
+				754298C42568CB3700CEA186 /* ComplexTests.swift */,
 				753B816B2534A24100AE7A1C /* Info.plist */,
 			);
 			path = contest04Tests;
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				753B816A2534A24100AE7A1C /* contest04Tests.swift in Sources */,
+				754298C52568CB3700CEA186 /* ComplexTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
