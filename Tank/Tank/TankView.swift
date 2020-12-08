@@ -20,15 +20,31 @@ class TankView: UIView {
     }
     
     func drawWheels() {
-        let circle = UIBezierPath(arcCenter: CGPoint(x: 560, y: 600), radius: 70, startAngle: 0 * CGFloat.pi, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let circle = UIBezierPath(arcCenter: CGPoint(x: 560, y: 630), radius: 70, startAngle: 0 * CGFloat.pi, endAngle: 2 * CGFloat.pi, clockwise: true)
+        circle.lineWidth = 2
         circle.stroke()
 
-        let circle1 = UIBezierPath(arcCenter: CGPoint(x: 300, y: 600), radius: 50, startAngle: 0.5 * CGFloat.pi, endAngle: 1.5 * CGFloat.pi, clockwise: true)
+        let circle1 = UIBezierPath(arcCenter: CGPoint(x: 300, y: 645), radius: 50, startAngle: 0 * CGFloat.pi, endAngle: 2 * CGFloat.pi, clockwise: true)
+        circle1.lineWidth = 2
         circle1.stroke()
     
+        let circle2 = UIBezierPath(arcCenter: CGPoint(x: 400, y: 590), radius: 20, startAngle: 0 * CGFloat.pi, endAngle: 2 * CGFloat.pi, clockwise: true)
+        circle2.lineWidth = 2
+        circle2.stroke()
+        
+        let circle3 = UIBezierPath(arcCenter: CGPoint(x: 440, y: 580), radius: 20, startAngle: 0 * CGFloat.pi, endAngle: 2 * CGFloat.pi, clockwise: true)
+        circle3.lineWidth = 2
+        circle3.stroke()
+    
+        let circle4 = UIBezierPath(arcCenter: CGPoint(x: 386, y: 659), radius: 36, startAngle: 0 * CGFloat.pi, endAngle: 2 * CGFloat.pi, clockwise: true)
+        circle4.lineWidth = 2
+        circle4.stroke()
+
+        let circle5 = UIBezierPath(arcCenter: CGPoint(x: 458, y: 659), radius: 36, startAngle: 0 * CGFloat.pi, endAngle: 2 * CGFloat.pi, clockwise: true)
+        circle5.lineWidth = 2
+        circle5.stroke()
     }
         
-    
     func drawBody()  {
         
         let pencil = UIBezierPath()
@@ -82,3 +98,5 @@ class TankView: UIView {
         pencil.stroke()
     }
 }
+
+
