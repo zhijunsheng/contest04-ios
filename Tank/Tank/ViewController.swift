@@ -10,11 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var greenView: TankView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func slide(_ sender: UISlider) {
+    
+        print("\(sender.value)")
+        greenView.deltaX = CGFloat(sender.value)
+        greenView.setNeedsDisplay()
+    }
 }
 

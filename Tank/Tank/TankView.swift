@@ -9,7 +9,8 @@
 import UIKit
 
 class TankView: UIView {
-
+    var deltaX: CGFloat = 0
+    
     
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -50,16 +51,17 @@ class TankView: UIView {
         let pencil = UIBezierPath()
         let pencil1 = UIBezierPath()
         let pencil2 = UIBezierPath()
-        pencil.move(to: CGPoint(x: 260, y: 530))
-        pencil.addLine(to: CGPoint(x: 230, y: 400))
-        pencil.addLine(to: CGPoint(x: 300, y: 350))
-        pencil.addLine(to: CGPoint(x: 550, y: 350))
-        pencil.addLine(to: CGPoint(x: 600, y: 450))
+        
+        pencil.move(to: CGPoint(x: 260 + deltaX, y: 530))
+        pencil.addLine(to: CGPoint(x: 230 + deltaX, y: 400))
+        pencil.addLine(to: CGPoint(x: 300 + deltaX, y: 350))
+        pencil.addLine(to: CGPoint(x: 550 + deltaX, y: 350))
+        pencil.addLine(to: CGPoint(x: 600 + deltaX, y: 450))
         pencil.close()
         #colorLiteral(red: 0.5714909346, green: 0.6085451749, blue: 0.5210322525, alpha: 1).setFill()
         pencil.fill()
-        pencil.move(to: CGPoint(x: 430, y: 350))
-        pencil.addLine(to: CGPoint(x: 430, y: 490))
+        pencil.move(to: CGPoint(x: 430 + deltaX, y: 350))
+        pencil.addLine(to: CGPoint(x: 430 + deltaX, y: 490))
         //pencil1
         pencil1.move(to: CGPoint(x: 260, y: 530))
         pencil1.addLine(to: CGPoint(x: 230, y: 400))
