@@ -12,16 +12,28 @@ class BoardView: UIView {
     
     var deltaX: CGFloat = 0
         
-    
-    
     override func draw(_ rect: CGRect) {
         drawTires()
         drawRoundTrack()
         drawTankPart()
         drawTop()
-//        drawBody()
-        drawTireLines()
-        
+        drawWheels()
+    }
+    
+    func drawWheels() {
+        for i in 0 ... 6 {
+            let pencil = UIBezierPath(arcCenter: CGPoint(x: 125 + CGFloat(i) * 75 + deltaX, y: 400), radius: 25, startAngle: CGFloat.pi * 1.5 + deltaX / 25, endAngle: CGFloat.pi * 2 + deltaX / 25, clockwise: true)
+            pencil.addLine(to: CGPoint(x: 125 + CGFloat(i) * 75 + deltaX, y: 400))
+            pencil.close()
+            pencil.lineWidth = 5
+             pencil.stroke()
+            
+            let pencil2 = UIBezierPath(arcCenter: CGPoint(x: 125 + CGFloat(i) * 75 + deltaX, y: 400), radius: 25, startAngle: CGFloat.pi * 0.5 + deltaX / 25, endAngle: CGFloat.pi * 1 + deltaX / 25, clockwise: true)
+            pencil2.addLine(to: CGPoint(x: 125 + CGFloat(i) * 75 + deltaX, y: 400))
+            pencil2.close()
+            pencil2.lineWidth = 5
+            pencil2.stroke()
+        }
     }
     
     func drawRoundTrack() {
@@ -64,18 +76,8 @@ class BoardView: UIView {
         }
     }
     
-    func drawTireLines() {
-        let pencil = UIBezierPath()
-
-        pencil.move(to: CGPoint(x: 125, y: 350))
-        pencil.move(to: CGPoint(x: 125, y: 400))
-        
-        pencil.stroke()
-
-    }
-    
     func drawTires() {
-        
+    
         let wheelPart = UIBezierPath()
         
         wheelPart.lineWidth = 5
@@ -105,21 +107,9 @@ class BoardView: UIView {
         part.move(to: CGPoint(x: 590 + deltaX, y: 375))
         part.addLine(to: CGPoint(x: 590 + deltaX, y: 325))
 
-//        part.move(to: CGPoint(x: 60, y: 325))
-//        part.addLine(to: CGPoint(x: 640, y: 325))
-//
         part.stroke()
         
           #colorLiteral(red: 0.352917254, green: 0.785050571, blue: 0.981100738, alpha: 1).setFill()
-//
-//        let part2 = UIBezierPath(rect: CGRect(x: 40, y: 275, width: 620, height: 50))
-//
-//        part2.fill()
-//        part2.stroke()
-//
-//        for i in 0 ... 5 {
-//            UIBezierPath(rect: CGRect(x: 40 + 90 * i, y: 275, width: 90, height: 50)).stroke()
-//        }
         
         for i in 0 ... 15 {
             let pencil = UIBezierPath()
@@ -131,143 +121,88 @@ class BoardView: UIView {
 
             pencil.stroke()
         }
-        
-        //side teeth
-        
-//        let pencil = UIBezierPath()
-//
-//        pencil.move(to: CGPoint(x: 50, y: 355))
-//        pencil.addLine(to: CGPoint(x: 40, y: 365))
-//
-//        pencil.move(to: CGPoint(x: 70, y: 375))
-//        pencil.addLine(to: CGPoint(x: 60, y: 385))
-//        pencil.move(to: CGPoint(x: 90, y: 395))
-//        pencil.addLine(to: CGPoint(x: 80, y: 405))
-//
-//        pencil.move(to: CGPoint(x: 110, y: 415))
-//        pencil.addLine(to: CGPoint(x: 100, y: 425))
-//
-//        pencil.move(to: CGPoint(x: 50, y: 355))
-//        pencil.addLine(to: CGPoint(x: 40, y: 365))
-//
-//        pencil.move(to: CGPoint(x: 70, y: 375))
-//        pencil.addLine(to: CGPoint(x: 60, y: 385))
-//
-//        pencil.move(to: CGPoint(x: 90, y: 395))
-//        pencil.addLine(to: CGPoint(x: 80, y: 405))
-//
-//        pencil.move(to: CGPoint(x: 110, y: 415))
-//        pencil.addLine(to: CGPoint(x: 100, y: 425))
-
-//        pencil.stroke()
-        
-//        let pencil = UIBezierPath()
-//
-//        pencil.move(to: CGPoint(x: 110, y: 250))
-//        pencil.addLine(to: CGPoint(x: 130, y: 230))
-//
-//        pencil.stroke()
     }
     
     func drawTop() {
         let pencil2 = UIBezierPath()
         
-        #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1).setFill()
-        
         pencil2.move(to: CGPoint(x: 40 + deltaX, y: 295))
         pencil2.addLine(to: CGPoint(x: 90 + deltaX, y: 275))
-
-        pencil2.move(to: CGPoint(x: 90 + deltaX, y: 275))
         pencil2.addLine(to: CGPoint(x: 610 + deltaX, y: 275))
-
-        pencil2.move(to: CGPoint(x: 610 + deltaX, y: 275))
         pencil2.addLine(to: CGPoint(x: 660 + deltaX, y: 295))
-
-        pencil2.stroke()
+        pencil2.addLine(to: CGPoint(x: 660 + deltaX, y: 315))
+        pencil2.addLine(to: CGPoint(x: 610 + deltaX, y: 295))
+        pencil2.addLine(to: CGPoint(x: 90 + deltaX, y: 295))
+        pencil2.addLine(to: CGPoint(x: 40 + deltaX, y: 315))
+        
+        pencil2.close()
+        #colorLiteral(red: 0.5058823824, green: 0.3372549117, blue: 0.06666667014, alpha: 1).setFill()
         
         pencil2.fill()
         
+        pencil2.stroke()
+        
+        let pencil3 = UIBezierPath()
+        
+      pencil3.move(to: CGPoint(x: 150 + deltaX, y: 225))
+      pencil3.addLine(to: CGPoint(x: 150 + deltaX, y: 275))
+      pencil3.addLine(to: CGPoint(x: 550 + deltaX, y: 275))
+      pencil3.addLine(to: CGPoint(x: 550 + deltaX, y: 225))
+        
+        pencil3.close()
+        
+        #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1).setFill()
+        
+        pencil3.fill()
+        
+        pencil3.stroke()
+        
+        let pencil4 = UIBezierPath()
+        
+        pencil4.move(to: CGPoint(x: 205 + deltaX, y: 225))
+        pencil4.addLine(to: CGPoint(x: 225 + deltaX, y: 175))
+        pencil4.addLine(to: CGPoint(x: 500 + deltaX, y: 175))
+        pencil4.addLine(to: CGPoint(x: 525 + deltaX, y: 225))
+        
+        pencil4.close()
+        
+        #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1).setFill()
+        
+        pencil4.fill()
+        
+        pencil4.stroke()
+        
+        let pencil5 = UIBezierPath()
+        
+        #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1).setFill()
+        
+        pencil5.move(to: CGPoint(x: 150 + deltaX, y: 180))
+        pencil5.addLine(to: CGPoint(x: 150 + deltaX, y: 205))
+        pencil5.addLine(to: CGPoint(x: 213 + deltaX, y: 205))
+        pencil5.addLine(to: CGPoint(x: 223 + deltaX, y: 180))
+        pencil5.addLine(to: CGPoint(x: 150 + deltaX, y: 180))
+        
+        pencil5.close()
+    
+        pencil5.fill()
+        
+        pencil5.stroke()
+        
         let pencil = UIBezierPath()
-            
-        pencil.move(to: CGPoint(x: 40 + deltaX, y: 315))
-        pencil.addLine(to: CGPoint(x: 90 + deltaX, y: 295))
+        
+        #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1).setFill()
 
-        pencil.move(to: CGPoint(x: 90 + deltaX, y: 295))
-        pencil.addLine(to: CGPoint(x: 610 + deltaX, y: 295))
-
-        pencil.move(to: CGPoint(x: 610 + deltaX, y: 295))
-        pencil.addLine(to: CGPoint(x: 660 + deltaX, y: 315))
-
-        pencil.move(to: CGPoint(x: 40 + deltaX, y: 295))
-        pencil.addLine(to: CGPoint(x: 40 + deltaX, y: 315))
-
-        pencil.move(to: CGPoint(x: 660 + deltaX, y: 295))
-        pencil.addLine(to: CGPoint(x: 660 + deltaX, y: 315))
-//
-        pencil.move(to: CGPoint(x: 150 + deltaX, y: 225))
-        pencil.addLine(to: CGPoint(x: 150 + deltaX, y: 275))
-        
-        pencil.move(to: CGPoint(x: 550 + deltaX, y: 225))
-        pencil.addLine(to: CGPoint(x: 550 + deltaX, y: 275))
-        
-        pencil.move(to: CGPoint(x: 150 + deltaX, y: 225))
-        pencil.addLine(to: CGPoint(x: 550 + deltaX, y: 225))
-        
-        pencil.move(to: CGPoint(x: 205 + deltaX, y: 225))
-        pencil.addLine(to: CGPoint(x: 225 + deltaX, y: 175))
-        
-        pencil.move(to: CGPoint(x: 225 + deltaX, y: 175))
-        pencil.addLine(to: CGPoint(x: 500 + deltaX, y: 175))
-        
-        pencil.move(to: CGPoint(x: 500 + deltaX, y: 175))
-        pencil.addLine(to: CGPoint(x: 525 + deltaX, y: 225))
-        
-        pencil.move(to: CGPoint(x: 0 + deltaX, y: 200))
-        pencil.addLine(to: CGPoint(x: 150 + deltaX, y: 200))
-        
-        pencil.move(to: CGPoint(x: 0 + deltaX, y: 185))
-        pencil.addLine(to: CGPoint(x: 150 + deltaX, y: 185))
-        
-        pencil.move(to: CGPoint(x: 150 + deltaX, y: 180))
-        pencil.addLine(to: CGPoint(x: 150 + deltaX, y: 205))
-        
-        pencil.move(to: CGPoint(x: 150 + deltaX, y: 180))
-        pencil.addLine(to: CGPoint(x: 223 + deltaX, y: 180))
-
-        pencil.move(to: CGPoint(x: 150 + deltaX, y: 205))
-        pencil.addLine(to: CGPoint(x: 213 + deltaX, y: 205))
-        
         pencil.move(to: CGPoint(x: 0 + deltaX, y: 185))
         pencil.addLine(to: CGPoint(x: 0 + deltaX, y: 200))
+        pencil.addLine(to: CGPoint(x: 150 + deltaX, y: 200))
+        pencil.addLine(to: CGPoint(x: 150 + deltaX, y: 185))
+        pencil.addLine(to: CGPoint(x: 0 + deltaX, y: 185))
+        pencil.addLine(to: CGPoint(x: 0 + deltaX, y: 185))
+                
+        pencil.close()
         
-        pencil.stroke()
-    }
-    
-    //        let part2 = UIBezierPath(rect: CGRect(x: 40, y: 275, width: 620, height: 50))
-    //
-    //        part2.fill()
-    //        part2.stroke()
-    
-    func drawBody() {
-        let pencil = UIBezierPath()
-        
-        pencil.move(to: CGPoint(x: 40, y: 275))
-        pencil.addLine(to: CGPoint(x: 660, y: 275))
-        pencil.addLine(to: CGPoint(x: 590, y: 325))
-        pencil.addLine(to: CGPoint(x: 110, y: 325))
+        pencil.fill()
         
         pencil.stroke()
     }
 }
-
-
-/*
- 
- N, natural numbers: 1, 2,  3,
- Z, integers: 0, 1, 2, 3, - 1
- Q, rational numbers: 1.1, -1.1, 3.333333... 1/2
- R, real numbers: √2, π
- C, ?
- 
- 
- */

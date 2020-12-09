@@ -66,6 +66,7 @@
 				A157FB4F253649D30013568B /* Contest4 */,
 				A157FB66253649D90013568B /* Contest4Tests */,
 				A157FB4E253649D30013568B /* Products */,
+				A157FB69253649D90013568B /* Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				A157FB67253649D90013568B /* Contest4Tests.swift */,
-				A157FB69253649D90013568B /* Info.plist */,
 			);
 			path = Contest4Tests;
 			sourceTree = "<group>";

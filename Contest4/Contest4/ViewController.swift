@@ -12,12 +12,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var boardView: BoardView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-//
         Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (timer) in
-            print("\(self.boardView.deltaX)")
 
             self.boardView.deltaX = self.boardView.deltaX - 1
 
@@ -30,10 +27,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func move(_ sender: UISlider) {
-        print("\(sender.value)")
-
         boardView.deltaX = CGFloat(sender.value)
         boardView.setNeedsDisplay()
     }
-    
 }
