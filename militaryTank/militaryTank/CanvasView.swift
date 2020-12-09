@@ -8,16 +8,24 @@
 import UIKit
 
 class CanvasView: UIView {
-
     var deltaX: CGFloat = 0
+    var bulletX: CGFloat = 0
+    var showBullet: Bool = false
     
     override func draw(_ rect: CGRect) {
+        
+        
+        
+        
+        
         drawTank()
         drawWheelAndBottomPart()
-
-        let bullet = UIImage(named: "Bullet")
-        bullet?.draw(in: CGRect(x: 570 + deltaX, y: 150, width: 90, height: 50))
         
+        if showBullet {
+            let bullet = UIImage(named: "Bullet")
+            bullet?.draw(in: CGRect(x: 600 + bulletX, y: 250, width: 55, height: 45))
+            
+        }
     }
     
     /*
@@ -63,8 +71,9 @@ class CanvasView: UIView {
     
     
     func drawTank() {
+        var movingTip = CGFloat(200) + deltaX
         #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1).setFill()
-        let tipOfTank = UIBezierPath(rect: CGRect(x: 200 + deltaX  , y: 355, width: 100, height: 40))
+        let tipOfTank = UIBezierPath(rect: CGRect(x: movingTip  , y: 355, width: 100, height: 40))
         tipOfTank.fill()
         tipOfTank.stroke()
     
