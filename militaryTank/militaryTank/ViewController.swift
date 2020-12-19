@@ -20,6 +20,13 @@ class ViewController: UIViewController {
                 self.canvasView.deltaX = -370
             }
         }
+        
+        Timer.scheduledTimer(withTimeInterval: 6, repeats: true) { (clock) in
+            self.canvasView.randomX1 = Int(arc4random() % 701)
+            self.canvasView.randomY1 = Int(arc4random() % 200)
+            self.canvasView.randomX = Int(arc4random() % 701)
+            self.canvasView.randomY = Int(arc4random() % 200)
+        }
     }
     
     @IBAction func slide(_ sender: UISlider) {

@@ -11,13 +11,27 @@ class CanvasView: UIView {
     var deltaX: CGFloat = 0
     var bulletX: CGFloat = 0
     var showBullet: Bool = false
-    
+    var randomX1 = Int(arc4random() % 701)
+    var randomY1 = Int(arc4random() % 200)
+    var randomX = Int(arc4random() % 701)
+    var randomY = Int(arc4random() % 200)
     override func draw(_ rect: CGRect) {
         
         
+        let pencil = UIBezierPath()
+        pencil.lineWidth = 5
+        #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).setStroke()
+        #colorLiteral(red: 0.09174057096, green: 0.4620538354, blue: 0.4376840591, alpha: 1).setFill()
+        pencil.move(to: CGPoint(x: 0, y: 700))
+        pencil.addLine(to: CGPoint(x: 730, y: 700))
+        pencil.addLine(to: CGPoint(x: 730, y: 500))
+        pencil.addLine(to: CGPoint(x: 0, y: 500))
+        pencil.close()
+        pencil.fill()
+        pencil.stroke()
         
-        
-        
+ 
+        drawRoad()
         drawTank()
         drawWheelAndBottomPart()
         
@@ -27,16 +41,18 @@ class CanvasView: UIView {
             
         }
     }
+
+    func drawRoad() {
+        let pencil = UIBezierPath()
+        pencil.lineWidth = 2
+        pencil.move(to: CGPoint(x: randomX1, y: 500 + randomY))
+        pencil.addLine(to: CGPoint(x: randomX, y: 500 + randomY1))
+        pencil.stroke()
+    }
     
-    /*
-     
-     radius
-     
-     radians ~ degrees
-     
-     */
     func drawOneWheel(distance: CGFloat) {
-        let arc4 = UIBezierPath(arcCenter: CGPoint(x: 100 + distance + deltaX, y: 600), radius: 5, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let arc4 = UIBezierPath(arcCenter: CGPoint(x: 100 + distance + deltaX, y: 600), radius: 45, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        arc4.lineWidth = 10
         arc4.stroke()
         
         for i in 0..<5 {
@@ -56,22 +72,14 @@ class CanvasView: UIView {
     }
     
     func drawWheelAndBottomPart() {
-        
-        let connectorStroke = UIBezierPath()
-        connectorStroke.move(to: CGPoint(x: 100 + deltaX, y: 636))
-        connectorStroke.addLine(to: CGPoint(x: 400 + deltaX, y: 636))
-        connectorStroke.stroke()
-        
         drawOneWheel(distance: 0)
         drawOneWheel(distance: 100)
         drawOneWheel(distance: 200)
         drawOneWheel(distance: 300)
     }
     
-    
-    
     func drawTank() {
-        var movingTip = CGFloat(200) + deltaX
+        let movingTip = CGFloat(200) + deltaX
         #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1).setFill()
         let tipOfTank = UIBezierPath(rect: CGRect(x: movingTip  , y: 355, width: 100, height: 40))
         tipOfTank.fill()
@@ -80,10 +88,6 @@ class CanvasView: UIView {
         let tankGunTip = UIBezierPath(rect: CGRect(x: 540 + deltaX  , y: 250, width: 60, height: 50))
         tankGunTip.fill()
         tankGunTip.stroke()
-        
-//        let tankGun = UIBezierPath(rect: CGRect(x: 450 + deltaX  , y: 310, width: 200, height: 30))
-//        tankGun.fill()
-//        tankGun.stroke()
         
         let tankGun = UIBezierPath()
         tankGun.move(to: CGPoint(x: 440 + deltaX, y: 410))
@@ -110,6 +114,5 @@ class CanvasView: UIView {
         let topOfTank = UIBezierPath(rect: CGRect(x: 120 + deltaX, y: 395, width: 300, height: 70))
         topOfTank.fill()
         topOfTank.stroke()
-        
     }
 }
