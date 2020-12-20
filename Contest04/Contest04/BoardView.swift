@@ -23,28 +23,26 @@ class BoardView: UIView {
         let topTrack = UIBezierPath()
         topTrack.move(to: CGPoint(x: 150 + centreXDelta, y: 400))
         topTrack.addLine(to: CGPoint(x: 450 + centreXDelta, y: 400))
-        topTrack.lineWidth = 8
+        topTrack.lineWidth = 15
         topTrack.stroke()
         
         let bottomTrack = UIBezierPath()
         bottomTrack.move(to: CGPoint(x: 150 + centreXDelta, y: 430 + 30))
         bottomTrack.addLine(to: CGPoint(x: 450 + centreXDelta, y: 430 + 30))
-        bottomTrack.lineWidth = 8
+        bottomTrack.lineWidth = 15
         bottomTrack.stroke()
         
         let curve = UIBezierPath(arcCenter: CGPoint(x: 150 + centreXDelta, y: 430), radius: 30, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-        curve.lineWidth = 8
+        curve.lineWidth = 15
         curve.stroke()
         
         let curve1 = UIBezierPath(arcCenter: CGPoint(x: 450 + centreXDelta, y: 430), radius: 30, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-        curve1.lineWidth = 8
+        curve1.lineWidth = 15
         curve1.stroke()
-        
         
         let fillIn = UIBezierPath(rect: CGRect(x: 150 + centreXDelta, y: 400, width: 150 * 2, height: 30 * 2))
         #colorLiteral(red: 0.2006855607, green: 0.2007260025, blue: 0.2006802261, alpha: 1).setFill()
         fillIn.fill()
-        
     }
 
     func drawBody() {
@@ -61,7 +59,6 @@ class BoardView: UIView {
         upperPart.close()
         upperPart.fill()
         upperPart.stroke()
-        
     }
     
     func drawGun() {
@@ -110,6 +107,7 @@ class BoardView: UIView {
         
         let wheel1 = UIBezierPath(arcCenter: CGPoint(x: 250 + centreXDelta, y: 430), radius: 30, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
         #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).setFill()
+
         wheel1.stroke()
         wheel1.fill()
         
