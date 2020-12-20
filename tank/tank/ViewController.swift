@@ -14,8 +14,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (timer) in
             self.boardView.delta = self.boardView.delta + 1
+            if self.boardView.delta > 600 {
+                self.boardView.delta = -650
+            }
             self.boardView.setNeedsDisplay()
         }
     }

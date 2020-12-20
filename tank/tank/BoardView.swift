@@ -38,6 +38,18 @@ class BoardView: UIView {
             sector2.fill()
             sector2.stroke()
         }
+    
+            for a in 0 ..< 2 {
+                let sector3 = UIBezierPath(arcCenter: CGPoint(x: 155 + delta, y: 490), radius: 5, startAngle: 1.75 * CGFloat.pi - CGFloat(a) * CGFloat.pi + delta / wheelsRadius / 0.6, endAngle: 0.25 * CGFloat.pi + CGFloat(a) * CGFloat.pi + delta / wheelsRadius / 0.6, clockwise: true)
+                sector3.lineWidth = 4
+                sector3.stroke()
+            }
+        
+        for i in 0 ..< 2 {
+            let sector3 = UIBezierPath(arcCenter: CGPoint(x: 160 + wheelsRadius * 13 + delta, y: 490), radius: 5, startAngle: 1.75 * CGFloat.pi - CGFloat(i) * CGFloat.pi + delta / wheelsRadius / 0.6, endAngle: 0.25 * CGFloat.pi + CGFloat(i) * CGFloat.pi + delta / wheelsRadius / 0.6, clockwise: true)
+            sector3.lineWidth = 4
+            sector3.stroke()
+        }
     }
     
     func wheels() {
