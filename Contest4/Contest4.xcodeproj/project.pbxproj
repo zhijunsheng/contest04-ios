@@ -87,9 +87,8 @@
 				A157FB7225364B1F0013568B /* BoardView.swift */,
 				A157FB54253649D30013568B /* ViewController.swift */,
 				A157FB56253649D30013568B /* Main.storyboard */,
-				A157FB59253649D90013568B /* Assets.xcassets */,
-				A157FB5B253649D90013568B /* LaunchScreen.storyboard */,
 				A157FB5E253649D90013568B /* Info.plist */,
+				A157FB5B253649D90013568B /* LaunchScreen.storyboard */,
 			);
 			path = Contest4;
 			sourceTree = "<group>";
@@ -98,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				A157FB67253649D90013568B /* Contest4Tests.swift */,
+				A157FB59253649D90013568B /* Assets.xcassets */,
 			);
 			path = Contest4Tests;
 			sourceTree = "<group>";
