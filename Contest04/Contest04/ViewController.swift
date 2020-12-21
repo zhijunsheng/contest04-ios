@@ -16,11 +16,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         Timer.scheduledTimer(withTimeInterval: 0.01, repeats:true) { (_) in
-            print(self.canvasView.move)
-            if self.canvasView.move >= 1200 {
+            
+            if self.canvasView.move >= 1400 {
                 self.canvasView.move = -1000
             }
-            self.canvasView.move += 1
+            self.canvasView.move += 3.1415926535
             self.canvasView.setNeedsDisplay()
         }
     }

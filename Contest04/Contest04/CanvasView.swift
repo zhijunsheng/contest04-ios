@@ -12,27 +12,23 @@ class CanvasView: UIView {
 
     var move:CGFloat = 1
     let offset: CGFloat = 600
+    let d: CGFloat = 110/100
     
     override func draw(_ rect: CGRect) {
         tank1()
         tank2()
         tank3()
-        
-        
-        
-       
-    }
-    
-    // drawTrack, drawWheels, turret, cannon, body,
-    
+     }
+
     func tank2() {
         body()
         circle1()
        i1()
     }
+    
     func body() {
         let penci1l = UIBezierPath()
-        penci1l.move(to: CGPoint(x: 300 - move, y: 330))
+        penci1l.move(to: CGPoint(x: 300 - move - d, y: 330))
         penci1l.addLine(to: CGPoint(x: 12 - move, y: 330))
         penci1l.addLine(to: CGPoint(x: 12 - move, y: 340))
         penci1l.addLine(to: CGPoint(x: 300 - move, y: 340))
@@ -118,6 +114,7 @@ class CanvasView: UIView {
             w.stroke()
         }
     }
+    
     func circle1() {
         for i in 1..<10 {
          let wheel = UIBezierPath(arcCenter: CGPoint(x: 75 - move + CGFloat(i) * 50, y: 525), radius: 25, startAngle: 0 * CGFloat.pi, endAngle: 2 * CGFloat.pi, clockwise: true)
@@ -136,11 +133,8 @@ class CanvasView: UIView {
         i()
     }
     
-    
-   
     func i1() {
         let pencil = UIBezierPath()
-        
         pencil.move(to: CGPoint(x: 525 - move, y: 550))
         pencil.addLine(to: CGPoint(x: 125 - move, y: 550))
         pencil.stroke()
@@ -148,7 +142,6 @@ class CanvasView: UIView {
     
     func tank() {
         let pencil = UIBezierPath()
-      
         pencil.move(to: CGPoint(x: 600 + offset - move, y: 400))
         pencil.addLine(to: CGPoint(x: 200 + offset - move, y: 400))
         pencil.addLine(to: CGPoint(x: 300 + offset - move, y: 320))
@@ -229,6 +222,7 @@ class CanvasView: UIView {
         
         
     }
+    
     func tank3() {
            goliath()
     }
@@ -262,26 +256,5 @@ class CanvasView: UIView {
         let p2 = CGPoint(x: 213, y: 333)
         path.move(to: p1)
         path.addLine(to: p2)
-        
-        // 675 + move + offset == 675 - move
-        // move + offset = - move
-        // 2 * move + offset = 0
-//        let a = CGRect(x: 675 + move + offset, y: 500, width: 20, height: 10)
-//
-//        let pencil1 = UIBezierPath(rect: a)
-//
-//        if a.minX == 675 - move {
-//            a.minX ==
-//        }
-//        pencil1.stroke()
     }
 }
-
-
-/*
- 
- 2π radians = 360 degrees
- 
- radius ~ radian
- 
- */

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC64FE1D25810EBC00DF5541 /* ComplexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC64FE1C25810EBC00DF5541 /* ComplexTests.swift */; };
 		EC81B1DA2534941500CB2627 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC81B1D92534941500CB2627 /* AppDelegate.swift */; };
 		EC81B1DC2534941500CB2627 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC81B1DB2534941500CB2627 /* SceneDelegate.swift */; };
 		EC81B1DE2534941500CB2627 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC81B1DD2534941500CB2627 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC64FE1C25810EBC00DF5541 /* ComplexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexTests.swift; sourceTree = "<group>"; };
 		EC81B1D62534941500CB2627 /* Contest04.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contest04.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC81B1D92534941500CB2627 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC81B1DB2534941500CB2627 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				EC81B1F02534941900CB2627 /* Contest04Tests.swift */,
 				EC81B1F22534941900CB2627 /* Info.plist */,
+				EC64FE1C25810EBC00DF5541 /* ComplexTests.swift */,
 			);
 			path = Contest04Tests;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC64FE1D25810EBC00DF5541 /* ComplexTests.swift in Sources */,
 				EC81B1F12534941900CB2627 /* Contest04Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
