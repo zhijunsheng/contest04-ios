@@ -7,11 +7,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Timer.scheduledTimer(withTimeInterval: 0.02, repeats: false) { (t) in
-            self.tankView.deltaX = self.tankView.deltaX - 1
+        Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (t) in
+            self.tankView.deltaX = self.tankView.deltaX - 2.5
             print("\(self.tankView.deltaX)")
             
-            if self.tankView.deltaX == -650 {
+            if self.tankView.deltaX < -650 {
                 self.tankView.deltaX = 650
             }
             
