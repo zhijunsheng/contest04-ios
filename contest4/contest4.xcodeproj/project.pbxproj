@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A32E4A672586FCFF009E8C85 /* Contest4Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32E4A662586FCFF009E8C85 /* Contest4Utils.swift */; };
+		A32E4A692586FEA4009E8C85 /* Contest4UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32E4A682586FEA4009E8C85 /* Contest4UtilsTests.swift */; };
 		A3835A10253D228D0094D39D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3835A0F253D228D0094D39D /* AppDelegate.swift */; };
 		A3835A12253D228D0094D39D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3835A11253D228D0094D39D /* ViewController.swift */; };
 		A3835A15253D228D0094D39D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3835A13253D228D0094D39D /* Main.storyboard */; };
@@ -14,6 +16,7 @@
 		A3835A1A253D22900094D39D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3835A18253D22900094D39D /* LaunchScreen.storyboard */; };
 		A3835A25253D22900094D39D /* contest4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3835A24253D22900094D39D /* contest4Tests.swift */; };
 		A3835A30253D23640094D39D /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3835A2F253D23640094D39D /* BoardView.swift */; };
+		A3CD75D625748CFF0091A683 /* ComplexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD75D525748CFF0091A683 /* ComplexTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A32E4A662586FCFF009E8C85 /* Contest4Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contest4Utils.swift; sourceTree = "<group>"; };
+		A32E4A682586FEA4009E8C85 /* Contest4UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contest4UtilsTests.swift; sourceTree = "<group>"; };
 		A3835A0C253D228D0094D39D /* contest4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = contest4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3835A0F253D228D0094D39D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3835A11253D228D0094D39D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +43,7 @@
 		A3835A24253D22900094D39D /* contest4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contest4Tests.swift; sourceTree = "<group>"; };
 		A3835A26253D22900094D39D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3835A2F253D23640094D39D /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		A3CD75D525748CFF0091A683 /* ComplexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				A3835A2F253D23640094D39D /* BoardView.swift */,
+				A32E4A662586FCFF009E8C85 /* Contest4Utils.swift */,
 				A3835A0F253D228D0094D39D /* AppDelegate.swift */,
 				A3835A11253D228D0094D39D /* ViewController.swift */,
 				A3835A13253D228D0094D39D /* Main.storyboard */,
@@ -93,6 +100,8 @@
 		A3835A23253D22900094D39D /* contest4Tests */ = {
 			isa = PBXGroup;
 			children = (
+				A32E4A682586FEA4009E8C85 /* Contest4UtilsTests.swift */,
+				A3CD75D525748CFF0091A683 /* ComplexTests.swift */,
 				A3835A24253D22900094D39D /* contest4Tests.swift */,
 				A3835A26253D22900094D39D /* Info.plist */,
 			);
@@ -203,6 +212,7 @@
 				A3835A30253D23640094D39D /* BoardView.swift in Sources */,
 				A3835A12253D228D0094D39D /* ViewController.swift in Sources */,
 				A3835A10253D228D0094D39D /* AppDelegate.swift in Sources */,
+				A32E4A672586FCFF009E8C85 /* Contest4Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +220,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3CD75D625748CFF0091A683 /* ComplexTests.swift in Sources */,
+				A32E4A692586FEA4009E8C85 /* Contest4UtilsTests.swift in Sources */,
 				A3835A25253D22900094D39D /* contest4Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

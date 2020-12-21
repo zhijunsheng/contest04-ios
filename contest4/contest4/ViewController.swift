@@ -14,15 +14,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (_) in
-            self.boardView.movement = self.boardView.movement + 1
+        Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (_) in
+            self.boardView.movement = self.boardView.movement + 3
             self.boardView.setNeedsDisplay()
         }
-        Timer.scheduledTimer(withTimeInterval: 0.000000001, repeats: true) { (_) in
-            self.boardView.rocketMovement = self.boardView.rocketMovement + 3
-            self.boardView.setNeedsDisplay()
-        }
+//        Timer.scheduledTimer(withTimeInterval: 0.000000001, repeats: true) { (_) in
+//            self.boardView.rocketMovement = self.boardView.rocketMovement + 3
+//            self.boardView.setNeedsDisplay()
+//        }
 
     }
 
