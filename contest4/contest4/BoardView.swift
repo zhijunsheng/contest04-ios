@@ -19,11 +19,10 @@ class BoardView: UIView {
     let wheelRadius: CGFloat = 20
     override func draw(_ rect: CGRect) {
         
-        
         if rocketMovement > bounds.width - 50 {
             rocketMovement = movement
         }
-        if movement > bounds.width - 50 {
+        if movement > bounds.width + 10{
             movement = -300
             rocketMovement = -300
             rocket(rocketMovement: rocketMovement)
@@ -40,7 +39,7 @@ class BoardView: UIView {
     }
     
     func background() {
-        let sunRotation = movement / 100
+        let sunRotation = movement / 150
         let spacing: Int = 45
 
         let ground = UIBezierPath(rect: CGRect(x: 0, y: (bounds.height - wheelRadius + wheelRadius + 5) * size, width: bounds.width, height: 500))
@@ -82,19 +81,13 @@ class BoardView: UIView {
         cap.fill()
         cap.lineWidth = 2
         cap.stroke()
-        // 50 + wheelWidth / 2 - bodyWidth / 2
+
         let body = UIBezierPath(roundedRect: CGRect(x: (50 + wheelWidth / 2 - tankBodyWidth / 2 + movement) * size, y: (bounds.height - wheelHeight - tankBodyHeight) * size, width: tankBodyWidth * size, height: tankBodyHeight * size), cornerRadius: 20 * size)
         body.lineWidth = 2
         body.fill()
         body.stroke()
     }
 
-    
-//    func realAngle(angle: CGFloat) -> CGFloat{
-//        
-//        return(Int(angle) % )
-//    }
-    
     func wheel(movement: CGFloat) {
         let rotation = movement / 26 // 25
         let spacing: Int = 30
@@ -111,31 +104,13 @@ class BoardView: UIView {
                 #colorLiteral(red: 0.1037014052, green: 0.04392455518, blue: 0.04877308756, alpha: 1).setFill()
                 leftWheelSpike.fill()
                 
-                
-                
-//                let eraseExtraSpikeBottom = UIBezierPath(rect: CGRect(x: (50 + movement + wheelRadius) * size, y: (bounds.height) * size, width: tankBodyWidth, height: 6 * size))
-//
-//                #colorLiteral(red: 0.417942524, green: 0.7920717597, blue: 0.9997518659, alpha: 1).setFill()
-//                eraseExtraSpikeBottom.fill()
-                
                 let eraseWheel = UIBezierPath(roundedRect: CGRect(x: (50 + movement) * size, y: (bounds.height - wheelHeight) * size, width: wheelWidth * size, height: wheelHeight * size), cornerRadius: wheelRadius * size)
                 #colorLiteral(red: 0.417942524, green: 0.7920717597, blue: 0.9997518659, alpha: 1).setFill()
                 eraseWheel.fill()
                 
                 let rightWheelSpikeX = 50 + movement + wheelRadius + wheelRadius * 8
                 let posAngle = realAngle(angle: rotation + multSpikes)
-                
-                // 2 * CGFloat.pi / CGFloat(spacing) + rotation + multSpikes
-                
-                
-            // 0 ~ 6 => -3 ~ 3
-//                print(realAngle)
-                
-                // x: rightWheelSpikeX * size, y: (bounds.height - wheelRadius) * size
-                
-//                let testCircle = UIBezierPath(arcCenter: CGPoint(x: 400, y: 300), radius: 50 * size, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-//
-//                testCircle.stroke()
+        
                 if (CGFloat.pi / 2) > posAngle && posAngle > -(CGFloat.pi / 2) || (CGFloat.pi / 2 * 3) < posAngle && posAngle > -(CGFloat.pi / 2){
                 
                     let rightWheelSpike = UIBezierPath(arcCenter: CGPoint(x: rightWheelSpikeX * size, y: (bounds.height - wheelRadius) * size), radius: 26 * size, startAngle: 0 + rotation + multSpikes, endAngle: 2 * CGFloat.pi / CGFloat(spacing) + rotation + multSpikes, clockwise: true)
@@ -143,14 +118,7 @@ class BoardView: UIView {
                     rightWheelSpike.close()
                     #colorLiteral(red: 0.1037014052, green: 0.04392455518, blue: 0.04877308756, alpha: 1).setFill()
                     rightWheelSpike.fill()
-                
                 }
-            
-                
-                // ? % 6 4.1241
-                // Int(56.3445) % Int(6.28)
-                // 5634.45 % 628
-                
                 
                 let eraseWheel2 = UIBezierPath(arcCenter: CGPoint(x: rightWheelSpikeX * size, y: (bounds.height - wheelRadius) * size), radius: 20 * size, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
                 #colorLiteral(red: 0.417942524, green: 0.7920717597, blue: 0.9997518659, alpha: 1).setFill()
@@ -169,7 +137,6 @@ class BoardView: UIView {
         for i in 0..<5 {
             wheelCircle(x: (50 + movement + wheelRadius + wheelRadius * CGFloat(i * 2)) * size, y: (bounds.height - wheelRadius) * size)
         }
-        
     }
     
     func wheelCircle(x: CGFloat, y: CGFloat) {
@@ -195,7 +162,6 @@ class BoardView: UIView {
         let spikeNumber: Int = Int(bounds.width * 5)
         let difference: CGFloat = (wheelWidth / 2 - tankBodyWidth / 2)
         
-        
         for i in 0..<spikeNumber {
             let spike = UIBezierPath(rect: CGRect(x: (CGFloat(-1000) + difference + change + 20 * CGFloat(i)) * size, y: (bounds.height - wheelHeight - 6) * size, width: 4 * size, height: 6 * size))
             
@@ -211,7 +177,6 @@ class BoardView: UIView {
         let marker = (60 + wheelRadius + tankBodyWidth + movement - 3) * size
         let leftBlock = UIBezierPath(rect: CGRect(x: 0, y: (bounds.height - wheelHeight - 100) * size, width: (50 + wheelWidth / 2 - tankBodyWidth / 2 + movement) * size, height: 300 * size))
         
-        //100 * size    30 * size
         let rightBlock = UIBezierPath(rect: CGRect(x: marker, y: (bounds.height - wheelHeight - tankBodyHeight + tankBodyHeight / 2 + 9) * size, width: (bounds.width - marker), height: 300 * size))
         
         #colorLiteral(red: 0.417942524, green: 0.7920717597, blue: 0.9997518659, alpha: 1).setFill()
@@ -219,11 +184,3 @@ class BoardView: UIView {
         leftBlock.fill()
     }
 }
-
-/*
- N: 1,2,3,4,5,6
- Z: 1,2,3,4,5,6,-1,-2,0
- Q: 1,2,3,4,5,6,-1,-2,0,sqrt(4),5/2,0.6666...
- R: π, sqrt(2),√40, e
- C: i, √(-4)
-*/
