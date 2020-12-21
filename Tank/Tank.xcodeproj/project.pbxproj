@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E7AD67225705C370027F9FD /* ComplexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7AD67125705C370027F9FD /* ComplexTests.swift */; };
 		1E83F00A253522CD00DFA568 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E83F009253522CD00DFA568 /* AppDelegate.swift */; };
 		1E83F00C253522CD00DFA568 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E83F00B253522CD00DFA568 /* SceneDelegate.swift */; };
 		1E83F00E253522CD00DFA568 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E83F00D253522CD00DFA568 /* ViewController.swift */; };
 		1E83F011253522CD00DFA568 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E83F00F253522CD00DFA568 /* Main.storyboard */; };
 		1E83F013253522CF00DFA568 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E83F012253522CF00DFA568 /* Assets.xcassets */; };
 		1E83F016253522CF00DFA568 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E83F014253522CF00DFA568 /* LaunchScreen.storyboard */; };
-		1E83F021253522CF00DFA568 /* TankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E83F020253522CF00DFA568 /* TankTests.swift */; };
 		1E83F02C2535239400DFA568 /* TankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E83F02B2535239400DFA568 /* TankView.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E7AD67125705C370027F9FD /* ComplexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexTests.swift; sourceTree = "<group>"; };
 		1E83F006253522CD00DFA568 /* Tank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E83F009253522CD00DFA568 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E83F00B253522CD00DFA568 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +38,6 @@
 		1E83F015253522CF00DFA568 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E83F017253522CF00DFA568 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E83F01C253522CF00DFA568 /* TankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E83F020253522CF00DFA568 /* TankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankTests.swift; sourceTree = "<group>"; };
 		1E83F022253522CF00DFA568 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E83F02B2535239400DFA568 /* TankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,8 +96,8 @@
 		1E83F01F253522CF00DFA568 /* TankTests */ = {
 			isa = PBXGroup;
 			children = (
-				1E83F020253522CF00DFA568 /* TankTests.swift */,
 				1E83F022253522CF00DFA568 /* Info.plist */,
+				1E7AD67125705C370027F9FD /* ComplexTests.swift */,
 			);
 			path = TankTests;
 			sourceTree = "<group>";
@@ -155,6 +155,7 @@
 					};
 					1E83F01B253522CF00DFA568 = {
 						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1220;
 						TestTargetID = 1E83F005253522CD00DFA568;
 					};
 				};
@@ -214,7 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E83F021253522CF00DFA568 /* TankTests.swift in Sources */,
+				1E7AD67225705C370027F9FD /* ComplexTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +404,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TankTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
@@ -413,6 +415,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = felix.TankTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tank.app/Tank";
@@ -424,6 +427,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TankTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;

@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     @IBAction func move(_ sender: Any) {
         timer?.invalidate()
         timer = nil
-        timer = Timer.scheduledTimer(withTimeInterval: 0, repeats: true) { [self] (_) in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { [self] (_) in
             tankView.tankX -= speed
             tankView.setNeedsDisplay()
         }
