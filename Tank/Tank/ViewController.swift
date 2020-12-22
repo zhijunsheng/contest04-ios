@@ -14,11 +14,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (t) in
+            self.greenView.deltaX = self.greenView.deltaX + 4
+            if self.greenView.deltaX == 480 {
+                self.greenView.deltaX = -700
+            }
+                
+            self.greenView.setNeedsDisplay()
+            print("\(self.greenView.deltaX)")
+        }
     }
 
     @IBAction func slide(_ sender: UISlider) {
-    
         print("\(sender.value)")
         greenView.deltaX = CGFloat(sender.value)
         greenView.setNeedsDisplay()
