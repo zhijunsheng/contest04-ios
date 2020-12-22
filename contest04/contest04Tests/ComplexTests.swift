@@ -7,9 +7,10 @@ class ComplexTests: XCTestCase {
         print("add+")
         let test1 = add(ComplexNumber(relPart: 3, imgPart: 4), ComplexNumber(relPart: -7, imgPart: 2))
         let test2 = times(ComplexNumber(relPart: 3, imgPart: 4), ComplexNumber(relPart: -7, imgPart: 2))
-        let test3 = divide(num1R: 3, num1I: 4, num2R: -7, num2I: 2)
+        let test3 = divide(ComplexNumber(relPart: 3, imgPart: 4), ComplexNumber(relPart: -7, imgPart: 2))
         print(test1)
         print(test2)
+        print(test3)
     }
     
     /*
@@ -31,11 +32,13 @@ class ComplexTests: XCTestCase {
         return asr
     }
     
-    func divide(num1R: Double, num1I: Double, num2R: Double, num2I: Double) {
-        let a = num1R * num2R + num2I * num1I
-        let b = num1R * -num2I + num2R * num1I
-        let c = num2R * num2R + num2I * num2I
-        print("\(a / c) + \(b / c)i")
+    func divide(_ cpl1: ComplexNumber,_ cpl2: ComplexNumber) -> ComplexNumber {
+        let a = cpl1.relPart * cpl2.relPart + cpl2.imgPart * cpl1.imgPart
+        let b = cpl1.relPart * -cpl2.imgPart + cpl1.imgPart * cpl2.relPart
+        let c = cpl2.relPart * cpl2.relPart + cpl2.imgPart * cpl2.imgPart
+        
+        
+        return ComplexNumber(relPart: a / c, imgPart: b / c)
     }
     
     

@@ -1,15 +1,25 @@
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     @IBOutlet weak var tankView: TankView!
     var timer1: Timer?
     var timer2: Timer?
- //   var bomb: UIImage
+    var soundPlayer: AVAudioPlayer!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        // could you accept the call?
+        // yes
+        // in wechat please
+        // no bettery
+        // before class: 49 battery...
+        
+        let boom = Bundle.main.path(forResource: "4055", ofType: "mp3")
+        let url = URL(fileURLWithPath: boom!)
+        self.soundPlayer = try? AVAudioPlayer(contentsOf: url)
         
     }
     
@@ -18,6 +28,7 @@ class ViewController: UIViewController {
         timer2 = nil
         timer2 = Timer.scheduledTimer(withTimeInterval: 1/30, repeats: true) { (t) in
             self.tankView.dtabltX += 80/3
+            self.soundPlayer.play()
             self.tankView.setNeedsDisplay()
             if self.tankView.dtabltX >= 625 {
                 self.tankView.dtabltX = 10

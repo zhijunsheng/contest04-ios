@@ -15,6 +15,7 @@
 		E7573AF62535CCD0005D0FB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7573AF42535CCD0005D0FB5 /* LaunchScreen.storyboard */; };
 		E7573B012535CCD0005D0FB5 /* contest04Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7573B002535CCD0005D0FB5 /* contest04Tests.swift */; };
 		E7573B0C2535CF86005D0FB5 /* TankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7573B0B2535CF86005D0FB5 /* TankView.swift */; };
+		E764E0BA2592089900BDA3DE /* 4055.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E764E0B92592089900BDA3DE /* 4055.mp3 */; };
 		E7A45544256E6ABE003E3BBC /* ComplexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A45543256E6ABE003E3BBC /* ComplexTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		E7573B002535CCD0005D0FB5 /* contest04Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contest04Tests.swift; sourceTree = "<group>"; };
 		E7573B022535CCD0005D0FB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7573B0B2535CF86005D0FB5 /* TankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankView.swift; sourceTree = "<group>"; };
+		E764E0B92592089900BDA3DE /* 4055.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 4055.mp3; sourceTree = "<group>"; };
 		E7A45543256E6ABE003E3BBC /* ComplexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 		E7573AE82535CCC6005D0FB5 /* contest04 */ = {
 			isa = PBXGroup;
 			children = (
+				E764E0B92592089900BDA3DE /* 4055.mp3 */,
 				E7573AE92535CCC6005D0FB5 /* AppDelegate.swift */,
 				E7573B0B2535CF86005D0FB5 /* TankView.swift */,
 				E7573AEB2535CCC6005D0FB5 /* SceneDelegate.swift */,
@@ -186,6 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E764E0BA2592089900BDA3DE /* 4055.mp3 in Resources */,
 				E7573AF62535CCD0005D0FB5 /* LaunchScreen.storyboard in Resources */,
 				E7573AF32535CCD0005D0FB5 /* Assets.xcassets in Resources */,
 				E7573AF12535CCC6005D0FB5 /* Main.storyboard in Resources */,
