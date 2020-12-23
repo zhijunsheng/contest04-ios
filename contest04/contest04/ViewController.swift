@@ -46,10 +46,10 @@ class ViewController: UIViewController {
         timer1?.invalidate()
         timer1 = nil
         timer1 = Timer.scheduledTimer(withTimeInterval: 1/30, repeats: true) { (_) in
-            self.tankView.dtatnkX += 1
+            self.tankView.dtatnkX += 5
             self.tankView.setNeedsDisplay()
             if self.tankView.dtatnkX >= 528 {
-                self.tankView.dtatnkX = -200
+                self.tankView.dtatnkX = -600
             }
             
         }
