@@ -42,6 +42,8 @@ class TankView: UIView {
         tnkTrack.addArc(withCenter: CGPoint(x: 264 * rso + dtatnkX, y: 414 * rso), radius: 50 * rso, startAngle: 1 * CGFloat.pi, endAngle: 0.5 * CGFloat.pi, clockwise: false)
         tnkTrack.addLine(to: CGPoint(x: 464 * rso + dtatnkX, y: 464 * rso))
         tnkTrack.addArc(withCenter: CGPoint(x: 464 * rso + dtatnkX, y: 414 * rso), radius: 50 * rso, startAngle: 0.5 * CGFloat.pi, endAngle: 0, clockwise: false)
+        
+        
         #colorLiteral(red: 0.5704585314, green: 0.5704723597, blue: 0.5704649091, alpha: 0.5).setFill()
         tnkTrack.fill()
         tnkTrack.lineWidth = 5

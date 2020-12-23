@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         // no bettery
         // before class: 49 battery...
         
-        let boom = Bundle.main.path(forResource: "4055", ofType: "mp3")
+        let boom = Bundle.main.path(forResource: "pick_release", ofType: "wav")
         let url = URL(fileURLWithPath: boom!)
         self.soundPlayer = try? AVAudioPlayer(contentsOf: url)
         
@@ -26,9 +26,9 @@ class ViewController: UIViewController {
     @IBAction func boom(_ sender: UIButton) {
         timer2?.invalidate()
         timer2 = nil
+        self.soundPlayer.play()
         timer2 = Timer.scheduledTimer(withTimeInterval: 1/30, repeats: true) { (t) in
             self.tankView.dtabltX += 80/3
-            self.soundPlayer.play()
             self.tankView.setNeedsDisplay()
             if self.tankView.dtabltX >= 625 {
                 self.tankView.dtabltX = 10
