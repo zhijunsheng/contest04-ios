@@ -25,12 +25,23 @@ class ViewController: UIViewController {
     }
     @IBAction func boom(_ sender: Any) {
         Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (t) in
-            self.tankView.boomMove += 50
-            if self.tankView.boomMove >= 475 {
+            self.tankView.boomMove += 5
+            if self.tankView.boomMove >= 800 {
                 t.invalidate()
                 self.tankView.boomMove = 0
             }
             self.tankView.setNeedsDisplay()
         }
+    }
+    @IBAction func bulletGravity(_ sender: Any) {
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (h) in
+            self.tankView.boommMove += 10
+            if self.tankView.boommMove >= 300 {
+                h.invalidate()
+                self.tankView.boommMove = 0
+            }
+            self.tankView.setNeedsDisplay()
+        }
+        
     }
 }

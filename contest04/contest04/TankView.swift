@@ -4,11 +4,14 @@ class TankView: UIView {
     var piLength: CGFloat = 0
     var xMove: CGFloat = 0
     var boomMove: CGFloat = 0
+    var boommMove: CGFloat = 0
     
     override func draw(_ rect: CGRect) {
         
-        let image2 = UIImage(named: "bullet")
-        image2?.draw(in: CGRect(x: 340 + boomMove + xMove, y: 85, width: 100, height: 50))
+        let image1 = UIImage(named: "bullet")
+        image1?.draw(in: CGRect(x: 340 + boomMove + xMove, y: 85 + boommMove, width: 100, height: 50))
+        let image2 = UIImage(named: "fire2")
+        image2?.draw(in: CGRect(x: 500, y: 180, width: 150, height: 150))
         drawShapeSix()
         drawWheels()
         drawlines()
