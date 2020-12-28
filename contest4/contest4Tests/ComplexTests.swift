@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import contest4
 
 class ComplexTests: XCTestCase {
     
@@ -16,6 +17,38 @@ class ComplexTests: XCTestCase {
      f  oil
      -14 6i 56i 24
     */
+
+    
+    
+    func testDivis() {
+        divis(topRe: 7, topIm: 17, bottomRe: 2, bottomIm: 3)
+    }
+    
+    /*
+        7+17i     2-3i     14-21i
+        -----  *  ----  =
+        2+3i      2-3i
+    */
+    
+    func divis(topRe: Double, topIm: Double, bottomRe: Double, bottomIm: Double) {
+        
+        let tf = topRe * bottomRe
+        let to = topRe * bottomIm * -1
+        let ti = topIm * bottomRe
+        let tl = topIm * bottomIm
+        
+        
+        let bReal = bottomRe * bottomRe
+        let bImag = bottomIm * bottomIm
+        
+        let answTopReal = tf + tl
+        let answTopImaj = to + ti
+        let bottom = bReal + bImag
+        
+        print ("\(answTopReal / bottom) + \(answTopImaj / bottom)i")
+        
+        
+    }
     
     func testMult() {
         mult(cRe: 2, cIm: -8, dRe: -7, dIm: 3)

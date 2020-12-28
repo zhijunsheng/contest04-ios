@@ -22,5 +22,12 @@ class Contest4UtilsTests: XCTestCase {
         print(1.5 * CGFloat.pi)
         
     }
-
+    
+    func testRealAngleVsTruncRemain() {
+        let x: CGFloat = 7
+        let y = 2 * CGFloat.pi
+        
+        XCTAssertTrue(abs(realAngle(angle: x) - x.truncatingRemainder(dividingBy: y)) < 0.001)
+        
+    }
 }
