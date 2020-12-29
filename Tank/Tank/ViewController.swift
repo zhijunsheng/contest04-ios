@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (t) in
-            self.greenView.deltaX = self.greenView.deltaX + 4
-            if self.greenView.deltaX == 480 {
+            self.greenView.deltaX = self.greenView.deltaX + 3
+            if self.greenView.deltaX > 500 {
                 self.greenView.deltaX = -700
             }
                 
